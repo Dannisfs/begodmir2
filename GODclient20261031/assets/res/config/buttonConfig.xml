@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config VER="1.0">
+<!--基础操作类-->
+<!--alginX 相对于窗口水平对齐方式0左对齐1右对齐2中心对齐 默认0-->
+<!--alginY 相对于窗口垂直对齐方式0下对齐1上对齐2中心对齐 默认0-->
+<!--isOnlyPC 0都显示1只显示PC2只显示手机 默认0-->
+    <Button name="普攻" type="1" buttonType="99" magicID="-1" iconPath="icon/pugong.png" x="195" y="69" alginX="1" background="0" index="-1" isHide="1" isOnlyPC="2"/>
+	<Button name="攻击人物" type="1" buttonType="135" magicID="-1" iconPath="icon/gongjiguaiwu.png" x="100" y="164" alginX="1" background="0" index="-1" isHide="1" isOnlyPC="2"/>
+	<Button name="攻击怪物" type="1" buttonType="136" magicID="-1" iconPath="icon/gongjirenwu.png" x="218" y="30" alginX="1" background="0" index="-1" isHide="1" isOnlyPC="2"/>
+	<Button name="强攻" type="1" buttonType="302" magicID="-1" iconPath="icon/qianggong.png" x="65" y="30" alginX="1" background="0" index="-1" isHide="1" isOnlyPC="2"/>
+	<Button name="拾取" type="1" buttonType="209" magicID="-1" iconPath="icon/main_shiqu.png" x="70" y="250" alginX="1" background="2" index="-1" isHide="1" isOnlyPC="2"/>
+
+    <Button name="布局" type="1" buttonType="110" magicID="-1" iconPath="newui/99jineng.png" x="231" y="650" alginX="1" background="0" index="-1" isHide="1"/>
+	<Button name="设置" type="1" buttonType="109" magicID="-1" iconPath="newui/99shezhi.png" x="231" y="585" alginX="1" background="0" index="-1" isHide="1"/>
+	<Button name="小退" type="1" buttonType="113" magicID="-1" iconPath="newui/99xiaotui.png" x="231" y="520" alginX="1" background="0" index="-1" isHide="1"/>
+
+	<Button name="角色" type="1" buttonType="101" magicID="-1" iconPath="newui/1900013010.png" x="180" y="103" alginX="2" background="0" index="-1" isHide="1"/>
+    <Button name="背包" type="1" buttonType="100" magicID="-1" iconPath="newui/1900013011.png" x="180" y="35" alginX="2" background="0" index="-1" isHide="1"/>
+
+
+
+    <Button name="技能" type="1" buttonType="102" magicID="-1" iconPath="longteng/t003.png" x="130" y="430" alginX="1" alginY="0" background="0" index="-1" isHide="1"/>
+	<Button name="摆摊" type="1" buttonType="106" magicID="-1" iconPath="longteng/t002.png" x="200" y="430" alginX="1" background="2" index="-1" isHide="1"  script="baitan.txt"/>
+	<!--<Button name="交易" type="1" buttonType="105" magicID="-1" iconPath="longteng/t001.png" x="270" y="430" alginX="1" background="2" index="-1" isHide="1"/>-->
+
+
+	<Button name="组队" type="1" buttonType="104" magicID="-1" iconPath="longteng/t006.png" x="60" y="350" alginX="1" background="2" index="-1" isHide="1"/>
+	<Button name="行会" type="1" buttonType="103" magicID="-1" iconPath="longteng/t005.png" x="130" y="350" alginX="1" background="2" index="-1" isHide="1"/>
+	<Button name="技能复位" type="1" buttonType="330" magicID="-1" iconPath="longteng/t007.png" x="200" y="350" alginX="1" background="2" index="-1" isHide="1" script="jnfw.txt"/>
+	
+	
+	<Button name="挂机" type="1" buttonType="114" magicID="-1" iconPath="longteng/t004.png" toggleImg="longteng/t004-1.png" x="270" y="350" alginX="1" background="0" index="-1" isHide="1" toggle="" togglestate="1"/>
+
+
+	<!--<Button name="排行榜" type="1" buttonType="309" magicID="-1" iconPath="longteng/zxc2-1.png" x="-305" y="27" alginX="2" background="0" index="-1" isHide="1" script="phb.txt"/>-->
+
+
+	<Button name="商城" type="1" buttonType="108" magicID="-1" iconPath="longteng/t010.png" x="270" y="430" alginX="1" background="2" index="-1" isHide="1"/>
+
+
+
+	<Button name="生肖" type="1" csb="Character.csb" path="backGround/equipPanel/yupei" buttonType="400" magicID="-1" iconPath="n001/02694.PNG" x="-35" y="320" background="2" script="shx.txt"/>
+
+	<Button name="综合服务" type="1" buttonType="310" magicID="-1" iconPath="longteng/000011.png" x="30" y="30" alginX="0" alginY="1" background="0" index="-1" isHide="1" script="zhfw.txt"/>
+	<Button name="全服爆率" type="1" buttonType="311" magicID="-1" iconPath="longteng/000023.png" x="120" y="30" alginX="0" alginY="1" background="0" index="-1" isHide="1" script="qfbl.txt"/>
+	<Button name="交易担保" type="1" buttonType="312" magicID="-1" iconPath="longteng/000062.png" x="210" y="30" alginX="0" alginY="1" background="0" index="-1" isHide="1" script="jydb.txt"/>
+	<Button name="游戏攻略" type="1" buttonType="313" magicID="-1" iconPath="longteng/000020.png" x="300" y="30" alginX="0" alginY="1" background="0" index="-1" isHide="1" script="yxjs.txt"/>
+	<Button name="全服喊话" type="1" buttonType="314" magicID="-1" iconPath="longteng/000056.png" x="390" y="30" alginX="0" alginY="1" background="0" index="-1" isHide="1" script="qflb.txt"/>
+	
+
+<!---------->
+    <Button name="快捷栏1" type="2" buttonType="129" magicID="-1" iconPath="longteng/kuaijie.png" x="-145" y="125" alginX="2" background="0" index="-1" isHide="1" itemName="盟重回城石"/>
+    <Button name="快捷栏2" type="2" buttonType="130" magicID="-1" iconPath="longteng/kuaijie.png" x="-95" y="125" alginX="2" background="0" index="-1" isHide="1" itemName="随机传送石"/>
+    <Button name="快捷栏3" type="2" buttonType="131" magicID="-1" iconPath="longteng/kuaijie.png" x="-45" y="125" alginX="2" background="0" index="-1" isHide="1" itemName="苹果"/>
+    <Button name="快捷栏4" type="2" buttonType="132" magicID="-1" iconPath="longteng/kuaijie.png" x="5" y="125" alginX="2" background="0" index="-1" isHide="1" itemName="攻击神水"/>
+    <Button name="快捷栏5" type="2" buttonType="133" magicID="-1" iconPath="longteng/kuaijie.png" x="55" y="125" alginX="2" background="0" index="-1" isHide="1" itemName="魔力神水"/>
+    <Button name="快捷栏6" type="2" buttonType="134" magicID="-1" iconPath="longteng/kuaijie.png" x="105" y="125" alginX="2" background="0" index="-1" isHide="1" itemName="道力神水"/>
+
+	<Button name="活动类收纳按钮1" type="1" buttonType="413" magicID="-1" iconPath="longteng/000017.png" toggleImg="longteng/000014.png" x="0" y="30" alginX="0" alginY="1" background="0" index="-1" isHide="1" toggle="综合服务|全服爆率|交易担保|游戏攻略|全服喊话" togglestate="1"/>
+	<Button name="活动类收纳按钮2" type="1" buttonType="414" magicID="-1" iconPath="newui/an001.png" toggleImg="newui/an002.png" x="60" y="430" alginX="1" background="0" index="-1" isHide="1" toggle="商城|摆摊|交易|组队|行会|技能|技能复位|" togglestate="1"/>
+
+</Config>

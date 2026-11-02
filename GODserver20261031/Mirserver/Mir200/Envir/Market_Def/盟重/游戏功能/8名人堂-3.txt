@@ -1,0 +1,423 @@
+[@MAIN]
+#IF
+#ACT
+  GOTO @MRT
+BREAK
+
+
+[@MRT]
+{
+#IF
+#ACT
+  #CALL [\任务配置\主线任务.txt] @任务6
+  CLIENTCMD HideIconEffects 名人堂 1
+
+#IF
+#ACT
+  MOV N$名人堂总页签 3
+
+#IF
+  equal N$名人堂当前页 0
+#ACT
+  MOV N$名人堂当前页 1
+
+#IF
+  equal N$名人堂当前页 1
+#ACT
+  MOV N$名人堂行标 0
+
+#IF
+  equal N$名人堂当前页 2
+#ACT
+  MOV N$名人堂行标 10
+
+#IF
+  equal N$名人堂当前页 3
+#ACT
+  MOV N$名人堂行标 20
+
+
+#IF
+  SMALL N$名人堂行标 1
+  LARGE N$名人堂行标 30
+#ACT
+  MOV N$名人堂行标 0
+
+#IF
+#ACT
+  MOV S$名人角色名1 虚位以待
+  MOV N$名人等级1 0
+  MOV S$名人角色名2 虚位以待
+  MOV N$名人等级2 0
+  MOV S$名人角色名3 虚位以待
+  MOV N$名人等级3 0
+  MOV S$名人角色名4 虚位以待
+  MOV N$名人等级4 0
+  MOV S$名人角色名5 虚位以待
+  MOV N$名人等级5 0
+  MOV S$名人角色名6 虚位以待
+  MOV N$名人等级6 0
+  MOV S$名人角色名7 虚位以待
+  MOV N$名人等级7 0
+  MOV S$名人角色名8 虚位以待
+  MOV N$名人等级8 0
+  MOV S$名人角色名9 虚位以待
+  MOV N$名人等级9 0
+  MOV S$名人角色名10 虚位以待
+  MOV N$名人等级10 0
+
+  GetListString ..\QuestDiary\游戏数据\名人堂数据\等级榜1.txt <$STR(N$名人堂行标)> S$名人角色名1 N$名人等级1
+  INC N$名人堂行标 1
+  GetListString ..\QuestDiary\游戏数据\名人堂数据\等级榜1.txt <$STR(N$名人堂行标)> S$名人角色名2 N$名人等级2
+  INC N$名人堂行标 1
+  GetListString ..\QuestDiary\游戏数据\名人堂数据\等级榜1.txt <$STR(N$名人堂行标)> S$名人角色名3 N$名人等级3
+  INC N$名人堂行标 1
+  GetListString ..\QuestDiary\游戏数据\名人堂数据\等级榜1.txt <$STR(N$名人堂行标)> S$名人角色名4 N$名人等级4
+  INC N$名人堂行标 1
+  GetListString ..\QuestDiary\游戏数据\名人堂数据\等级榜1.txt <$STR(N$名人堂行标)> S$名人角色名5 N$名人等级5
+  INC N$名人堂行标 1
+  GetListString ..\QuestDiary\游戏数据\名人堂数据\等级榜1.txt <$STR(N$名人堂行标)> S$名人角色名6 N$名人等级6
+  INC N$名人堂行标 1
+  GetListString ..\QuestDiary\游戏数据\名人堂数据\等级榜1.txt <$STR(N$名人堂行标)> S$名人角色名7 N$名人等级7
+  INC N$名人堂行标 1
+  GetListString ..\QuestDiary\游戏数据\名人堂数据\等级榜1.txt <$STR(N$名人堂行标)> S$名人角色名8 N$名人等级8
+  INC N$名人堂行标 1
+  GetListString ..\QuestDiary\游戏数据\名人堂数据\等级榜1.txt <$STR(N$名人堂行标)> S$名人角色名9 N$名人等级9
+  INC N$名人堂行标 1
+  GetListString ..\QuestDiary\游戏数据\名人堂数据\等级榜1.txt <$STR(N$名人堂行标)> S$名人角色名10 N$名人等级10
+  INC N$名人堂行标 1
+
+
+
+
+
+
+#IF
+#ACT
+  UIDLG Close ALL
+  UIDLG Open jiaoben009 400 150 0 0 1
+  UIDLG LockItemSlot jiaoben009 item_001:1
+
+  UIDLG SetItemSlot jiaoben009 item_001:注释
+  UIDLG ItemSlotTip jiaoben009 item_001:<第1-3名：/SCOLOR=254/6><天子/SCOLOR=251><　攻防+90点，生命值+900点/SCOLOR=250>\\<第4-8名：/SCOLOR=254/6><诸侯/SCOLOR=251><　攻防+60点，生命值+600点/SCOLOR=250>\\<第9-15名：/SCOLOR=254/6><元帅/SCOLOR=251><　攻防+40点，生命值+400点/SCOLOR=250>\\<第16-25名：/SCOLOR=254/6><伯爵/SCOLOR=251><　攻防+30点，生命值+300点/SCOLOR=250>\\<第26-50名：/SCOLOR=254/6><子爵/SCOLOR=251><　攻防+20点，生命值+200点/SCOLOR=250>\\<第51-100名：/SCOLOR=254/6><男爵/SCOLOR=251><　攻防+10点，生命值+100点/SCOLOR=250>\\
+  UIDLG SetRichText jiaoben009 WBK_001:<　　<$STR(S$名人角色名1)>/SCOLOR=168/12><<$STR(N$名人等级1)>/SCOLOR=250><级/SCOLOR=251>
+  UIDLG SetRichText jiaoben009 WBK_002:<　　<$STR(S$名人角色名2)>/SCOLOR=168/12><<$STR(N$名人等级2)>/SCOLOR=250><级/SCOLOR=251>
+  UIDLG SetRichText jiaoben009 WBK_003:<　　<$STR(S$名人角色名3)>/SCOLOR=168/12><<$STR(N$名人等级3)>/SCOLOR=250><级/SCOLOR=251>
+  UIDLG SetRichText jiaoben009 WBK_004:<　　<$STR(S$名人角色名4)>/SCOLOR=168/12><<$STR(N$名人等级4)>/SCOLOR=250><级/SCOLOR=251>
+  UIDLG SetRichText jiaoben009 WBK_005:<　　<$STR(S$名人角色名5)>/SCOLOR=168/12><<$STR(N$名人等级5)>/SCOLOR=250><级/SCOLOR=251>
+  UIDLG SetRichText jiaoben009 WBK_006:<　　<$STR(S$名人角色名6)>/SCOLOR=168/12><<$STR(N$名人等级6)>/SCOLOR=250><级/SCOLOR=251>
+  UIDLG SetRichText jiaoben009 WBK_007:<　　<$STR(S$名人角色名7)>/SCOLOR=168/12><<$STR(N$名人等级7)>/SCOLOR=250><级/SCOLOR=251>
+  UIDLG SetRichText jiaoben009 WBK_008:<　　<$STR(S$名人角色名8)>/SCOLOR=168/12><<$STR(N$名人等级8)>/SCOLOR=250><级/SCOLOR=251>
+  UIDLG SetRichText jiaoben009 WBK_009:<　　<$STR(S$名人角色名9)>/SCOLOR=168/12><<$STR(N$名人等级9)>/SCOLOR=250><级/SCOLOR=251>
+  UIDLG SetRichText jiaoben009 WBK_010:<　　<$STR(S$名人角色名10)>/SCOLOR=168/12><<$STR(N$名人等级10)>/SCOLOR=250><级/SCOLOR=251>
+  UIDLG SetButtonGOTO jiaoben009 btn_011:@名人堂上一页
+  UIDLG SetButtonGOTO jiaoben009 btn_012:@名人堂下一页
+  UIDLG SetButtonGOTO jiaoben009 btn_001:@名人堂查看1
+  UIDLG SetButtonGOTO jiaoben009 btn_002:@名人堂查看2
+  UIDLG SetButtonGOTO jiaoben009 btn_003:@名人堂查看3
+  UIDLG SetButtonGOTO jiaoben009 btn_004:@名人堂查看4
+  UIDLG SetButtonGOTO jiaoben009 btn_005:@名人堂查看5
+  UIDLG SetButtonGOTO jiaoben009 btn_006:@名人堂查看6
+  UIDLG SetButtonGOTO jiaoben009 btn_007:@名人堂查看7
+  UIDLG SetButtonGOTO jiaoben009 btn_008:@名人堂查看8
+  UIDLG SetButtonGOTO jiaoben009 btn_009:@名人堂查看9
+  UIDLG SetButtonGOTO jiaoben009 btn_0010:@名人堂查看10
+
+
+
+#SAY
+  UICMD
+  <名人堂上一页/@名人堂上一页>\
+  <名人堂下一页/@名人堂下一页>\
+  <名人堂查看/@名人堂查看1>\
+  <名人堂查看/@名人堂查看2>\
+  <名人堂查看/@名人堂查看3>\
+  <名人堂查看/@名人堂查看4>\
+  <名人堂查看/@名人堂查看5>\
+  <名人堂查看/@名人堂查看6>\
+  <名人堂查看/@名人堂查看7>\
+  <名人堂查看/@名人堂查看8>\
+  <名人堂查看/@名人堂查看9>\
+  <名人堂查看/@名人堂查看10>\
+BREAK
+
+
+
+[@名人堂下一页]
+#IF
+  SMALL N$名人堂当前页 N$名人堂总页签
+#ACT
+  INC N$名人堂当前页 1
+  GOTO @MAIN
+#ELSEACT
+  MessAgeBox <已经是最后一页！/SCOLOR=58>
+BREAK
+
+[@名人堂上一页]
+#IF
+  LARGE N$名人堂当前页 1
+#ACT
+  DEC N$名人堂当前页 1
+  GOTO @MAIN
+#ELSEACT
+  MessAgeBox <已经是第一页！/SCOLOR=58>
+BREAK
+
+[@名人堂查看1]
+#IF
+  CheckOnline <$STR(S$名人角色名1)>
+#ACT
+  LOOK <$STR(S$名人角色名1)>
+#ELSEACT
+  MESSAGEBOX <玩家不在线或没有查看对象，无法查看信息!/SCOLOR=58>
+BREAK
+[@名人堂查看2]
+#IF
+  CheckOnline <$STR(S$名人角色名2)>
+#ACT
+  LOOK <$STR(S$名人角色名2)>
+#ELSEACT
+  MESSAGEBOX <玩家不在线或没有查看对象，无法查看信息!/SCOLOR=58>
+BREAK
+[@名人堂查看3]
+#IF
+  CheckOnline <$STR(S$名人角色名3)>
+#ACT
+  LOOK <$STR(S$名人角色名3)>
+#ELSEACT
+  MESSAGEBOX <玩家不在线或没有查看对象，无法查看信息!/SCOLOR=58>
+BREAK
+[@名人堂查看4]
+#IF
+  CheckOnline <$STR(S$名人角色名4)>
+#ACT
+  LOOK <$STR(S$名人角色名4)>
+#ELSEACT
+  MESSAGEBOX <玩家不在线或没有查看对象，无法查看信息!/SCOLOR=58>
+BREAK
+[@名人堂查看5]
+#IF
+  CheckOnline <$STR(S$名人角色名5)>
+#ACT
+  LOOK <$STR(S$名人角色名5)>
+#ELSEACT
+  MESSAGEBOX <玩家不在线或没有查看对象，无法查看信息!/SCOLOR=58>
+BREAK
+[@名人堂查看6]
+#IF
+  CheckOnline <$STR(S$名人角色名6)>
+#ACT
+  LOOK <$STR(S$名人角色名6)>
+#ELSEACT
+  MESSAGEBOX <玩家不在线或没有查看对象，无法查看信息!/SCOLOR=58>
+BREAK
+[@名人堂查看7]
+#IF
+  CheckOnline <$STR(S$名人角色名7)>
+#ACT
+  LOOK <$STR(S$名人角色名7)>
+#ELSEACT
+  MESSAGEBOX <玩家不在线或没有查看对象，无法查看信息!/SCOLOR=58>
+BREAK
+[@名人堂查看8]
+#IF
+  CheckOnline <$STR(S$名人角色名8)>
+#ACT
+  LOOK <$STR(S$名人角色名8)>
+#ELSEACT
+  MESSAGEBOX <玩家不在线或没有查看对象，无法查看信息!/SCOLOR=58>
+BREAK
+[@名人堂查看9]
+#IF
+  CheckOnline <$STR(S$名人角色名9)>
+#ACT
+  LOOK <$STR(S$名人角色名9)>
+#ELSEACT
+  MESSAGEBOX <玩家不在线或没有查看对象，无法查看信息!/SCOLOR=58>
+BREAK
+[@名人堂查看10]
+#IF
+  CheckOnline <$STR(S$名人角色名10)>
+#ACT
+  LOOK <$STR(S$名人角色名10)>
+#ELSEACT
+  MESSAGEBOX <玩家不在线或没有查看对象，无法查看信息!/SCOLOR=58>
+BREAK
+
+
+[@名人堂配置]
+#IF
+#ACT
+  MOV N$当前等级 <$LEVEL>
+  SAVEVAR HUMAN N$当前等级 ..\QuestDiary\游戏数据\名人堂数据\等级榜.txt
+  SortHumVarToListEx N$当前等级  ..\QuestDiary\游戏数据\名人堂数据\等级榜.txt 1 ..\QuestDiary\游戏数据\名人堂数据\等级榜1.txt 1
+BREAK
+
+[@名人堂称号]
+#IF
+#ACT
+  GetListStringEX ..\QuestDiary\游戏数据\名人堂数据\等级榜1.txt <$USERNAME> N$名人堂个人等级 N$名人堂个人排行
+  INC N$名人堂个人排行 1
+
+#IF
+  EQUAL N$名人堂个人排行 1
+  CHECKFENGHAO 天下第1
+#ACT
+  RECYCFENGHAO SELF 天下第2
+  RECYCFENGHAO SELF 天下第3
+  RECYCFENGHAO SELF 天下第4
+  RECYCFENGHAO SELF 天下第5
+  RECYCFENGHAO SELF 天下第6
+  RECYCFENGHAO SELF 天下第7
+  RECYCFENGHAO SELF 天下第8
+  RECYCFENGHAO SELF 天下第9
+  RECYCFENGHAO SELF 天下第10
+  GIVEFENGHAO SELF 天下第1
+BREAK
+
+#IF
+  EQUAL N$名人堂个人排行 2
+  CHECKFENGHAO 天下第2
+#ACT
+  RECYCFENGHAO SELF 天下第1
+  RECYCFENGHAO SELF 天下第3
+  RECYCFENGHAO SELF 天下第4
+  RECYCFENGHAO SELF 天下第5
+  RECYCFENGHAO SELF 天下第6
+  RECYCFENGHAO SELF 天下第7
+  RECYCFENGHAO SELF 天下第8
+  RECYCFENGHAO SELF 天下第9
+  RECYCFENGHAO SELF 天下第10
+  GIVEFENGHAO SELF 天下第2
+BREAK
+
+#IF
+  EQUAL N$名人堂个人排行 3
+  CHECKFENGHAO 天下第3
+#ACT
+  RECYCFENGHAO SELF 天下第2
+  RECYCFENGHAO SELF 天下第1
+  RECYCFENGHAO SELF 天下第4
+  RECYCFENGHAO SELF 天下第5
+  RECYCFENGHAO SELF 天下第6
+  RECYCFENGHAO SELF 天下第7
+  RECYCFENGHAO SELF 天下第8
+  RECYCFENGHAO SELF 天下第9
+  RECYCFENGHAO SELF 天下第10
+  GIVEFENGHAO SELF 天下第3
+BREAK
+
+#IF
+  EQUAL N$名人堂个人排行 4
+  CHECKFENGHAO 天下第4
+#ACT
+  RECYCFENGHAO SELF 天下第2
+  RECYCFENGHAO SELF 天下第1
+  RECYCFENGHAO SELF 天下第3
+  RECYCFENGHAO SELF 天下第5
+  RECYCFENGHAO SELF 天下第6
+  RECYCFENGHAO SELF 天下第7
+  RECYCFENGHAO SELF 天下第8
+  RECYCFENGHAO SELF 天下第9
+  RECYCFENGHAO SELF 天下第10
+  GIVEFENGHAO SELF 天下第4
+BREAK
+
+#IF
+  EQUAL N$名人堂个人排行 5
+  CHECKFENGHAO 天下第5
+#ACT
+  RECYCFENGHAO SELF 天下第2
+  RECYCFENGHAO SELF 天下第1
+  RECYCFENGHAO SELF 天下第4
+  RECYCFENGHAO SELF 天下第3
+  RECYCFENGHAO SELF 天下第6
+  RECYCFENGHAO SELF 天下第7
+  RECYCFENGHAO SELF 天下第8
+  RECYCFENGHAO SELF 天下第9
+  RECYCFENGHAO SELF 天下第10
+  GIVEFENGHAO SELF 天下第5
+BREAK
+
+#IF
+  EQUAL N$名人堂个人排行 6
+  CHECKFENGHAO 天下第6
+#ACT
+  RECYCFENGHAO SELF 天下第2
+  RECYCFENGHAO SELF 天下第1
+  RECYCFENGHAO SELF 天下第4
+  RECYCFENGHAO SELF 天下第5
+  RECYCFENGHAO SELF 天下第3
+  RECYCFENGHAO SELF 天下第7
+  RECYCFENGHAO SELF 天下第8
+  RECYCFENGHAO SELF 天下第9
+  RECYCFENGHAO SELF 天下第10
+  GIVEFENGHAO SELF 天下第6
+BREAK
+
+#IF
+  EQUAL N$名人堂个人排行 7
+  CHECKFENGHAO 天下第7
+#ACT
+  RECYCFENGHAO SELF 天下第2
+  RECYCFENGHAO SELF 天下第1
+  RECYCFENGHAO SELF 天下第4
+  RECYCFENGHAO SELF 天下第5
+  RECYCFENGHAO SELF 天下第6
+  RECYCFENGHAO SELF 天下第3
+  RECYCFENGHAO SELF 天下第8
+  RECYCFENGHAO SELF 天下第9
+  RECYCFENGHAO SELF 天下第10
+  GIVEFENGHAO SELF 天下第7
+BREAK
+
+#IF
+  EQUAL N$名人堂个人排行 8
+  CHECKFENGHAO 天下第8
+#ACT
+  RECYCFENGHAO SELF 天下第2
+  RECYCFENGHAO SELF 天下第1
+  RECYCFENGHAO SELF 天下第4
+  RECYCFENGHAO SELF 天下第5
+  RECYCFENGHAO SELF 天下第6
+  RECYCFENGHAO SELF 天下第7
+  RECYCFENGHAO SELF 天下第3
+  RECYCFENGHAO SELF 天下第9
+  RECYCFENGHAO SELF 天下第10
+  GIVEFENGHAO SELF 天下第8
+BREAK
+
+#IF
+  EQUAL N$名人堂个人排行 9
+  CHECKFENGHAO 天下第9
+#ACT
+  RECYCFENGHAO SELF 天下第2
+  RECYCFENGHAO SELF 天下第1
+  RECYCFENGHAO SELF 天下第4
+  RECYCFENGHAO SELF 天下第5
+  RECYCFENGHAO SELF 天下第6
+  RECYCFENGHAO SELF 天下第7
+  RECYCFENGHAO SELF 天下第8
+  RECYCFENGHAO SELF 天下第3
+  RECYCFENGHAO SELF 天下第10
+  GIVEFENGHAO SELF 天下第9
+BREAK
+
+#IF
+  EQUAL N$名人堂个人排行 10
+  CHECKFENGHAO 天下第10
+#ACT
+  RECYCFENGHAO SELF 天下第2
+  RECYCFENGHAO SELF 天下第1
+  RECYCFENGHAO SELF 天下第4
+  RECYCFENGHAO SELF 天下第5
+  RECYCFENGHAO SELF 天下第6
+  RECYCFENGHAO SELF 天下第7
+  RECYCFENGHAO SELF 天下第8
+  RECYCFENGHAO SELF 天下第9
+  RECYCFENGHAO SELF 天下第3
+  GIVEFENGHAO SELF 天下第10
+BREAK
+
+
+}

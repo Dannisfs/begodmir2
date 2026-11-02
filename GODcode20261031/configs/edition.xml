@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config>
+   <!--URL是资源更新地址 LIST是列表和公告地址  如果不写LIST 就自动读取URL里面的公告和列表  列表文件名字ServerList.txt  公告文件名字gonggao.txt 公告开头使用@则登录游戏自动打开9-0-1-7-5-.-c-o-m-->
+  <DESC NAME="ServerList.txt,gonggao.txt等固定名字" />
+  <VER1 NAME="版本1" URL="http://192.168.0.102:88/VER1/" LIST="http://192.168.0.102:88/VER1" />
+</Config>
+

@@ -1,0 +1,5 @@
+[@MAIN]
+#IF
+#ACT
+  #CALL [\Market_Def\盟重\游戏功能\1宠物小精灵-3.txt] @ZLXT
+BREAK

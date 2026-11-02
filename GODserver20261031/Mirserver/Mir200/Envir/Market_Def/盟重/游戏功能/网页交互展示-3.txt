@@ -1,0 +1,6 @@
+[@MAIN]
+#IF
+#ACT
+  UIDLG Close ALL
+  UIDLG Open jiaoben021 -500 330 2 2 1 0 http://api.75zg.com/ 0
+

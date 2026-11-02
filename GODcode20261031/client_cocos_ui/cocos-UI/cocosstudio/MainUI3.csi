@@ -1,0 +1,32 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="MainUI3" Type="Plist" ID="6864771a-4fb5-4111-b8f1-198ebf1198db" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="1" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="tianlong/UI/chatUIBG.png" />
+      <FilePathData Path="tianlong/dh/sq9.png" />
+      <FilePathData Path="tianlong/huiyuan/bn.png" />
+      <FilePathData Path="tianlong/huiyuan/bn1.png" />
+      <FilePathData Path="tianlong/huishou/ss06.png" />
+      <FilePathData Path="tianlong/huodong/k09.png" />
+      <FilePathData Path="bingxue/djtp/00191.png" />
+      <FilePathData Path="tianlong/dq/a01.jpg" />
+      <FilePathData Path="tianlong/hcds/1.png" />
+      <FilePathData Path="tianlong/cj/c211.png" />
+      <FilePathData Path="tianlong/cj/c25.png" />
+      <FilePathData Path="tianlong/cj/c26.png" />
+      <FilePathData Path="bingxue/00120.png" />
+      <FilePathData Path="bingxue/1900000640.png" />
+      <FilePathData Path="bingxue/1900000641.png" />
+      <FilePathData Path="tianlong/ditu/kb00.png" />
+      <FilePathData Path="tianlong/qh/00410.jpg" />
+      <FilePathData Path="tianlong/sbsjhc/2.png" />
+      <FilePathData Path="tianlong/sh/2.png" />
+      <FilePathData Path="tianlong/hyditu/cc01.png" />
+      <FilePathData Path="tianlong/main/Honeyview_bg_juese_04.jpg" />
+      <FilePathData Path="tianlong/huodong/csbk01.png" />
+      <FilePathData Path="tianlong/huodong/csbk04.png" />
+      <FilePathData Path="173UI/shajuan.png" />
+    </ImageFiles>
+    <MaxSize Width="2048" Height="2048" />
+  </Content>
+</PlistInfoProjectFile>

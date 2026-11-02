@@ -1,0 +1,436 @@
+[@MAIN]
+#IF
+#ACT
+  UIDLG Close jiaoben017
+  UIDLG Open jiaoben017 400 70 0 0 1
+  UIDLG BindCheckBox jiaoben017 CheckBox_001:N$从横迷宫
+  UIDLG BindCheckBox jiaoben017 CheckBox_002:N$轮回之地
+  UIDLG BindCheckBox jiaoben017 CheckBox_003:N$恶魔峡谷
+  UIDLG BindCheckBox jiaoben017 CheckBox_004:N$祖玛寺庙
+  UIDLG BindCheckBox jiaoben017 CheckBox_005:N$天云窟
+  UIDLG BindCheckBox jiaoben017 CheckBox_006:N$牛魔寺庙
+  UIDLG BindCheckBox jiaoben017 CheckBox_007:N$暗影回廊
+  UIDLG BindCheckBox jiaoben017 CheckBox_008:N$火龙窟
+  UIDLG BindCheckBox jiaoben017 CheckBox_009:N$地下宫殿
+  UIDLG BindCheckBox jiaoben017 CheckBox_010:N$封魔古都
+  UIDLG BindCheckBox jiaoben017 CheckBox_011:N$蓬莱岛
+  UIDLG CheckBox jiaoben017 CheckBox_001:1
+  UIDLG SetbuttonText jiaoben017 CheckBox_001:从横迷宫
+  UIDLG SetbuttonText jiaoben017 CheckBox_002:轮回之地
+  UIDLG SetbuttonText jiaoben017 CheckBox_003:恶魔峡谷
+  UIDLG SetbuttonText jiaoben017 CheckBox_004:祖玛寺庙
+  UIDLG SetbuttonText jiaoben017 CheckBox_005:天云窟
+  UIDLG SetbuttonText jiaoben017 CheckBox_006:牛魔寺庙
+  UIDLG SetbuttonText jiaoben017 CheckBox_007:暗影回廊
+  UIDLG SetbuttonText jiaoben017 CheckBox_008:火龙窟
+  UIDLG SetbuttonText jiaoben017 CheckBox_009:地下宫殿
+  UIDLG SetbuttonText jiaoben017 CheckBox_010:封魔古都
+  UIDLG SetbuttonText jiaoben017 CheckBox_011:蓬莱岛
+  UIDLG SetRichText jiaoben017 WBK_001:\\　\\　\\　\\<　等级需求：/SCOLOR=254><100/SCOLOR=58><级/SCOLOR=254>\\<　物品需求：/SCOLOR=254><从横迷宫门票(深渊)/SCOLOR=58><*1/SCOLOR=254>\\<　时间限制：/SCOLOR=254><30/SCOLOR=58><分钟/SCOLOR=254>\\<　怪物强度：/SCOLOR=254><★★★★★/SCOLOR=58>\\<　掉宝几率：/SCOLOR=254><一般/SCOLOR=58>\\<　掉落物品：/SCOLOR=254><稀有装备，/SCOLOR=250><强力宝石，/SCOLOR=251><稀有物品/SCOLOR=253>
+  UIDLG PlayEffect jiaoben017 effect_001:UIsucai.wil:10:8:200:0
+  UIDLG SetCheckBoxRadio jiaoben017 CheckBox_001:CheckBox_002:CheckBox_003:CheckBox_004:CheckBox_005:CheckBox_006:CheckBox_007:CheckBox_008:CheckBox_009:CheckBox_010:CheckBox_011
+  UIDLG SetCheckBoxGOTO jiaoben017 CheckBox_001:@MAIN
+  UIDLG SetCheckBoxGOTO jiaoben017 CheckBox_002:@轮回之地
+  UIDLG SetCheckBoxGOTO jiaoben017 CheckBox_003:@恶魔峡谷
+  UIDLG SetCheckBoxGOTO jiaoben017 CheckBox_004:@祖玛寺庙
+  UIDLG SetCheckBoxGOTO jiaoben017 CheckBox_005:@天云窟
+  UIDLG SetCheckBoxGOTO jiaoben017 CheckBox_006:@牛魔寺庙
+  UIDLG SetCheckBoxGOTO jiaoben017 CheckBox_007:@暗影回廊
+  UIDLG SetCheckBoxGOTO jiaoben017 CheckBox_008:@火龙窟
+  UIDLG SetCheckBoxGOTO jiaoben017 CheckBox_009:@地下宫殿
+  UIDLG SetCheckBoxGOTO jiaoben017 CheckBox_010:@封魔古都
+  UIDLG SetCheckBoxGOTO jiaoben017 CheckBox_011:@蓬莱岛
+  UIDLG SetButtonGOTO jiaoben017 btn_001:@进入从横迷宫
+
+#SAY
+UICMD
+<从横迷宫/@MAIN>\
+<轮回之地/@轮回之地>\
+<恶魔峡谷/@恶魔峡谷>\
+<祖玛寺庙/@祖玛寺庙>\
+<天云窟/@天云窟>\
+<牛魔寺庙/@牛魔寺庙>\
+<暗影回廊/@暗影回廊>\
+<火龙窟/@火龙窟>\
+<地下宫殿/@地下宫殿>\
+<封魔古都/@封魔古都>\
+<蓬莱岛/@蓬莱岛>\
+<进入从横迷宫/@进入从横迷宫>\
+BREAK
+
+
+[@轮回之地]
+#IF
+#ACT
+  UIDLG SetRichText jiaoben017 WBK_001:\\　\\　\\　\\<　等级需求：/SCOLOR=254><110/SCOLOR=58><级/SCOLOR=254>\\<　物品需求：/SCOLOR=254><轮回之地门票(深渊)/SCOLOR=58><*1/SCOLOR=254>\\<　时间限制：/SCOLOR=254><30/SCOLOR=58><分钟/SCOLOR=254>\\<　怪物强度：/SCOLOR=254><★★★★★/SCOLOR=58>\\<　掉宝几率：/SCOLOR=254><一般/SCOLOR=58>\\<　掉落物品：/SCOLOR=254><稀有装备，/SCOLOR=250><强力宝石，/SCOLOR=251><稀有物品/SCOLOR=253>
+  UIDLG SetButtonGOTO jiaoben017 btn_001:@进入轮回之地
+#SAY
+UICMD
+<进入轮回之地/@进入轮回之地>\
+BREAK
+
+[@恶魔峡谷]
+#IF
+#ACT
+  UIDLG SetRichText jiaoben017 WBK_001:\\　\\　\\　\\<　等级需求：/SCOLOR=254><120/SCOLOR=58><级/SCOLOR=254>\\<　物品需求：/SCOLOR=254><恶魔峡谷门票(深渊)/SCOLOR=58><*1/SCOLOR=254>\\<　时间限制：/SCOLOR=254><30/SCOLOR=58><分钟/SCOLOR=254>\\<　怪物强度：/SCOLOR=254><★★★★★/SCOLOR=58>\\<　掉宝几率：/SCOLOR=254><一般/SCOLOR=58>\\<　掉落物品：/SCOLOR=254><稀有装备，/SCOLOR=250><强力宝石，/SCOLOR=251><稀有物品/SCOLOR=253>
+  UIDLG SetButtonGOTO jiaoben017 btn_001:@进入恶魔峡谷
+#SAY
+UICMD
+<进入恶魔峡谷/@进入恶魔峡谷>\
+BREAK
+
+[@祖玛寺庙]
+#IF
+#ACT
+  UIDLG SetRichText jiaoben017 WBK_001:\\　\\　\\　\\<　等级需求：/SCOLOR=254><130/SCOLOR=58><级/SCOLOR=254>\\<　物品需求：/SCOLOR=254><祖玛寺庙门票(深渊)/SCOLOR=58><*1/SCOLOR=254>\\<　时间限制：/SCOLOR=254><30/SCOLOR=58><分钟/SCOLOR=254>\\<　怪物强度：/SCOLOR=254><★★★★★/SCOLOR=58>\\<　掉宝几率：/SCOLOR=254><一般/SCOLOR=58>\\<　掉落物品：/SCOLOR=254><稀有装备，/SCOLOR=250><强力宝石，/SCOLOR=251><稀有物品/SCOLOR=253>
+  UIDLG SetButtonGOTO jiaoben017 btn_001:@进入祖玛寺庙
+#SAY
+UICMD
+<进入祖玛寺庙/@进入祖玛寺庙>\
+BREAK
+
+[@天云窟]
+#IF
+#ACT
+  UIDLG SetRichText jiaoben017 WBK_001:\\　\\　\\　\\<　等级需求：/SCOLOR=254><140/SCOLOR=58><级/SCOLOR=254>\\<　物品需求：/SCOLOR=254><天云窟门票(深渊)/SCOLOR=58><*1/SCOLOR=254>\\<　时间限制：/SCOLOR=254><30/SCOLOR=58><分钟/SCOLOR=254>\\<　怪物强度：/SCOLOR=254><★★★★★/SCOLOR=58>\\<　掉宝几率：/SCOLOR=254><一般/SCOLOR=58>\\<　掉落物品：/SCOLOR=254><稀有装备，/SCOLOR=250><强力宝石，/SCOLOR=251><稀有物品/SCOLOR=253>
+  UIDLG SetButtonGOTO jiaoben017 btn_001:@进入天云窟
+#SAY
+UICMD
+<进入天云窟/@进入天云窟>\
+BREAK
+
+[@牛魔寺庙]
+#IF
+#ACT
+  UIDLG SetRichText jiaoben017 WBK_001:\\　\\　\\　\\<　等级需求：/SCOLOR=254><150/SCOLOR=58><级/SCOLOR=254>\\<　物品需求：/SCOLOR=254><牛魔寺庙门票(深渊)/SCOLOR=58><*1/SCOLOR=254>\\<　时间限制：/SCOLOR=254><30/SCOLOR=58><分钟/SCOLOR=254>\\<　怪物强度：/SCOLOR=254><★★★★★/SCOLOR=58>\\<　掉宝几率：/SCOLOR=254><一般/SCOLOR=58>\\<　掉落物品：/SCOLOR=254><稀有装备，/SCOLOR=250><强力宝石，/SCOLOR=251><稀有物品/SCOLOR=253>
+  UIDLG SetButtonGOTO jiaoben017 btn_001:@进入牛魔寺庙
+#SAY
+UICMD
+<进入牛魔寺庙/@进入牛魔寺庙>\
+BREAK
+
+[@暗影回廊]
+#IF
+#ACT
+  UIDLG SetRichText jiaoben017 WBK_001:\\　\\　\\　\\<　等级需求：/SCOLOR=254><160/SCOLOR=58><级/SCOLOR=254>\\<　物品需求：/SCOLOR=254><暗影回廊门票(深渊)/SCOLOR=58><*1/SCOLOR=254>\\<　时间限制：/SCOLOR=254><30/SCOLOR=58><分钟/SCOLOR=254>\\<　怪物强度：/SCOLOR=254><★★★★★/SCOLOR=58>\\<　掉宝几率：/SCOLOR=254><一般/SCOLOR=58>\\<　掉落物品：/SCOLOR=254><稀有装备，/SCOLOR=250><强力宝石，/SCOLOR=251><稀有物品/SCOLOR=253>
+  UIDLG SetButtonGOTO jiaoben017 btn_001:@进入暗影回廊
+#SAY
+UICMD
+<进入暗影回廊/@进入暗影回廊>\
+BREAK
+
+[@火龙窟]
+#IF
+#ACT
+  UIDLG SetRichText jiaoben017 WBK_001:\\　\\　\\　\\<　等级需求：/SCOLOR=254><170/SCOLOR=58><级/SCOLOR=254>\\<　物品需求：/SCOLOR=254><火龙窟门票(深渊)/SCOLOR=58><*1/SCOLOR=254>\\<　时间限制：/SCOLOR=254><30/SCOLOR=58><分钟/SCOLOR=254>\\<　怪物强度：/SCOLOR=254><★★★★★/SCOLOR=58>\\<　掉宝几率：/SCOLOR=254><一般/SCOLOR=58>\\<　掉落物品：/SCOLOR=254><稀有装备，/SCOLOR=250><强力宝石，/SCOLOR=251><稀有物品/SCOLOR=253>
+  UIDLG SetButtonGOTO jiaoben017 btn_001:@进入火龙窟
+#SAY
+UICMD
+<进入火龙窟/@进入火龙窟>\
+BREAK
+
+[@地下宫殿]
+#IF
+#ACT
+  UIDLG SetRichText jiaoben017 WBK_001:\\　\\　\\　\\<　等级需求：/SCOLOR=254><180/SCOLOR=58><级/SCOLOR=254>\\<　物品需求：/SCOLOR=254><地下宫殿门票(深渊)/SCOLOR=58><*1/SCOLOR=254>\\<　时间限制：/SCOLOR=254><30/SCOLOR=58><分钟/SCOLOR=254>\\<　怪物强度：/SCOLOR=254><★★★★★/SCOLOR=58>\\<　掉宝几率：/SCOLOR=254><一般/SCOLOR=58>\\<　掉落物品：/SCOLOR=254><稀有装备，/SCOLOR=250><强力宝石，/SCOLOR=251><稀有物品/SCOLOR=253>
+  UIDLG SetButtonGOTO jiaoben017 btn_001:@进入地下宫殿
+#SAY
+UICMD
+<进入地下宫殿/@进入地下宫殿>\
+BREAK
+
+[@封魔古都]
+#IF
+#ACT
+  UIDLG SetRichText jiaoben017 WBK_001:\\　\\　\\　\\<　等级需求：/SCOLOR=254><190/SCOLOR=58><级/SCOLOR=254>\\<　物品需求：/SCOLOR=254><封魔古都门票(深渊)/SCOLOR=58><*1/SCOLOR=254>\\<　时间限制：/SCOLOR=254><30/SCOLOR=58><分钟/SCOLOR=254>\\<　怪物强度：/SCOLOR=254><★★★★★/SCOLOR=58>\\<　掉宝几率：/SCOLOR=254><一般/SCOLOR=58>\\<　掉落物品：/SCOLOR=254><稀有装备，/SCOLOR=250><强力宝石，/SCOLOR=251><稀有物品/SCOLOR=253>
+  UIDLG SetButtonGOTO jiaoben017 btn_001:@进入封魔古都
+#SAY
+UICMD
+<进入封魔古都/@进入封魔古都>\
+BREAK
+
+[@蓬莱岛]
+#IF
+#ACT
+  UIDLG SetRichText jiaoben017 WBK_001:\\　\\　\\　\\<　等级需求：/SCOLOR=254><200/SCOLOR=58><级/SCOLOR=254>\\<　物品需求：/SCOLOR=254><蓬莱岛门票(深渊)/SCOLOR=58><*1/SCOLOR=254>\\<　时间限制：/SCOLOR=254><30/SCOLOR=58><分钟/SCOLOR=254>\\<　怪物强度：/SCOLOR=254><★★★★★/SCOLOR=58>\\<　掉宝几率：/SCOLOR=254><一般/SCOLOR=58>\\<　掉落物品：/SCOLOR=254><稀有装备，/SCOLOR=250><强力宝石，/SCOLOR=251><稀有物品/SCOLOR=253>
+  UIDLG SetButtonGOTO jiaoben017 btn_001:@进入蓬莱岛
+#SAY
+UICMD
+<进入蓬莱岛/@进入蓬莱岛>\
+BREAK
+
+[@进入从横迷宫]
+#IF
+  CheckHumInRange 3 330 330 10
+#ELSEACT
+  MessAgeBox <进入失败，请到土城安全区点击进入!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKLEVELEX < 100
+#ACT
+  MessAgeBox <进入失败，当前等级过低!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKITEM 从横迷宫门票(深渊) 1
+#ACT
+  TAKE 从横迷宫门票(深渊) 1
+  CREATEECTYPE FBP012 30 0
+  MOVEECTYPE FBP012 277 271
+  UIDLG Close jiaoben017
+#ELSEACT
+  MessAgeBox <进入失败，你的身上没有门票!/SCOLOR=58>
+BREAK
+
+[@进入轮回之地]
+#IF
+  CheckHumInRange 3 330 330 10
+#ELSEACT
+  MessAgeBox <进入失败，请到土城安全区点击进入!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKLEVELEX < 110
+#ACT
+  MessAgeBox <进入失败，当前等级过低!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKITEM 轮回之地门票(深渊) 1
+#ACT
+  LOG 1111
+  TAKE 轮回之地门票(深渊) 1
+  CREATEECTYPE FBP013 30 0
+  MOVEECTYPE FBP013 76 79
+  UIDLG Close jiaoben017
+#ELSEACT
+  MessAgeBox <进入失败，你的身上没有门票!/SCOLOR=58>
+BREAK
+
+[@进入恶魔峡谷]
+#IF
+  CheckHumInRange 3 330 330 10
+#ELSEACT
+  MessAgeBox <进入失败，请到土城安全区点击进入!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKLEVELEX < 120
+#ACT
+  MessAgeBox <进入失败，当前等级过低!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKITEM 恶魔峡谷门票(深渊) 1
+#ACT
+  TAKE 恶魔峡谷门票(深渊) 1
+  CREATEECTYPE FBP014 30 0
+  MOVEECTYPE FBP014 20 253
+  UIDLG Close jiaoben017
+#ELSEACT
+  MessAgeBox <进入失败，你的身上没有门票!/SCOLOR=58>
+BREAK
+
+[@进入祖玛寺庙]
+#IF
+  CheckHumInRange 3 330 330 10
+#ELSEACT
+  MessAgeBox <进入失败，请到土城安全区点击进入!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKLEVELEX < 130
+#ACT
+  MessAgeBox <进入失败，当前等级过低!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKITEM 祖玛寺庙门票(深渊) 1
+#ACT
+  TAKE 祖玛寺庙门票(深渊) 1
+  CREATEECTYPE FBP016 30 0
+  MOVEECTYPE FBP016 279 279
+  UIDLG Close jiaoben017
+#ELSEACT
+  MessAgeBox <进入失败，你的身上没有门票!/SCOLOR=58>
+BREAK
+
+[@进入天云窟]
+#IF
+  CheckHumInRange 3 330 330 10
+#ELSEACT
+  MessAgeBox <进入失败，请到土城安全区点击进入!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKLEVELEX < 140
+#ACT
+  MessAgeBox <进入失败，当前等级过低!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKITEM 天云窟门票(深渊) 1
+#ACT
+  TAKE 天云窟门票(深渊) 1
+  CREATEECTYPE FBP019 30 0
+  MOVEECTYPE FBP019 20 157
+  UIDLG Close jiaoben017
+#ELSEACT
+  MessAgeBox <进入失败，你的身上没有门票!/SCOLOR=58>
+BREAK
+
+[@进入牛魔寺庙]
+#IF
+  CheckHumInRange 3 330 330 10
+#ELSEACT
+  MessAgeBox <进入失败，请到土城安全区点击进入!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKLEVELEX < 150
+#ACT
+  MessAgeBox <进入失败，当前等级过低!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKITEM 牛魔寺庙门票(深渊) 1
+#ACT
+  TAKE 牛魔寺庙门票(深渊) 1
+  CREATEECTYPE FBP022 30 0
+  MOVEECTYPE FBP022 229 212
+  UIDLG Close jiaoben017
+#ELSEACT
+  MessAgeBox <进入失败，你的身上没有门票!/SCOLOR=58>
+BREAK
+
+[@进入暗影回廊]
+#IF
+  CheckHumInRange 3 330 330 10
+#ELSEACT
+  MessAgeBox <进入失败，请到土城安全区点击进入!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKLEVELEX < 160
+#ACT
+  MessAgeBox <进入失败，当前等级过低!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKITEM 暗影回廊门票(深渊) 1
+#ACT
+  TAKE 暗影回廊门票(深渊) 1
+  CREATEECTYPE FBP025 30 0
+  MOVEECTYPE FBP025 80 78
+  UIDLG Close jiaoben017
+#ELSEACT
+  MessAgeBox <进入失败，你的身上没有门票!/SCOLOR=58>
+BREAK
+
+[@进入火龙窟]
+#IF
+  CheckHumInRange 3 330 330 10
+#ELSEACT
+  MessAgeBox <进入失败，请到土城安全区点击进入!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKLEVELEX < 170
+#ACT
+  MessAgeBox <进入失败，当前等级过低!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKITEM 火龙窟门票(深渊) 1
+#ACT
+  TAKE 火龙窟门票(深渊) 1
+  CREATEECTYPE FBP026 30 0
+  MOVEECTYPE FBP026 30 50
+  UIDLG Close jiaoben017
+#ELSEACT
+  MessAgeBox <进入失败，你的身上没有门票!/SCOLOR=58>
+BREAK
+
+[@进入地下宫殿]
+#IF
+  CheckHumInRange 3 330 330 10
+#ELSEACT
+  MessAgeBox <进入失败，请到土城安全区点击进入!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKLEVELEX < 180
+#ACT
+  MessAgeBox <进入失败，当前等级过低!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKITEM 地下宫殿门票(深渊) 1
+#ACT
+  TAKE 地下宫殿门票(深渊) 1
+  CREATEECTYPE FBP028 30 0
+  MOVEECTYPE FBP028 38 162
+  UIDLG Close jiaoben017
+#ELSEACT
+  MessAgeBox <进入失败，你的身上没有门票!/SCOLOR=58>
+BREAK
+
+[@进入封魔古都]
+#IF
+  CheckHumInRange 3 330 330 10
+#ELSEACT
+  MessAgeBox <进入失败，请到土城安全区点击进入!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKLEVELEX < 190
+#ACT
+  MessAgeBox <进入失败，当前等级过低!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKITEM 封魔古都门票(深渊) 1
+#ACT
+  TAKE 封魔古都门票(深渊) 1
+  CREATEECTYPE FBP029 30 0
+  MOVEECTYPE FBP029 90 280
+  UIDLG Close jiaoben017
+#ELSEACT
+  MessAgeBox <进入失败，你的身上没有门票!/SCOLOR=58>
+BREAK
+
+[@进入蓬莱岛]
+#IF
+  CheckHumInRange 3 330 330 10
+#ELSEACT
+  MessAgeBox <进入失败，请到土城安全区点击进入!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKLEVELEX < 200
+#ACT
+  MessAgeBox <进入失败，当前等级过低!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKITEM 蓬莱岛门票(深渊) 1
+#ACT
+  TAKE 蓬莱岛门票(深渊) 1
+  CREATEECTYPE FBP030 30 0
+  MOVEECTYPE FBP030 94 73
+  UIDLG Close jiaoben017
+#ELSEACT
+  MessAgeBox <进入失败，你的身上没有门票!/SCOLOR=58>
+BREAK
+
+
+
+
+
+
+
+
+
+
+

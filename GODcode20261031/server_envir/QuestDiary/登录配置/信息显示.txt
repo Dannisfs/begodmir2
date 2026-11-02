@@ -1,0 +1,69 @@
+[@角色信息]
+{
+#IF
+  CHECKITEMW 复活戒指 1
+#ACT
+GOTO @有复活装备
+#ELSEACT
+GOTO @无复活装备
+
+
+#IF
+#ACT
+GETPLAYERATTR 3 N$攻击力下限 0
+GETPLAYERATTR 3 N$攻击力上限 1
+GETPLAYERATTR 1 N$防御力下限 0
+GETPLAYERATTR 1 N$防御力上限 1
+
+
+
+
+#IF
+#ACT
+  UIDLG Open jiaoben014 5 13 0 0 1 S0 0 1
+  UIDLG SetRichText jiaoben014 WBK_001:<魔晶：/SCOLOR=251><<$ACCOUNTGOLD>/SCOLOR=250>　<灵符：/SCOLOR=251><<$GAMEGIRD>/SCOLOR=250>　<元宝：/SCOLOR=251><<$GAMEGOLD>/SCOLOR=250>　<防御力：/SCOLOR=251><<$STR(N$防御力下限)>-/SCOLOR=250><<$STR(N$防御力上限)>/SCOLOR=250>　<攻击力：/SCOLOR=251><<$STR(N$攻击力下限)>-/SCOLOR=250><<$STR(N$攻击力上限)>/SCOLOR=250>　<复活状态：/SCOLOR=251><$STR(S$复活状态)>　<副本剩余时间：/SCOLOR=251><<$FBTIME>/SCOLOR=250><秒/SCOLOR=254>
+BREAK
+
+
+
+
+[@有复活装备]
+#IF
+  equal <$REVIVALTIME> 0
+#ACT
+  MOV S$复活状态 <可复活/SCOLOR=250>
+#ELSEACT
+  MOV S$复活状态 <<$REVIVALTIME>秒/SCOLOR=146>
+BREAK
+
+[@无复活装备]
+#IF
+#ACT
+  MOV S$复活状态 <无复活/SCOLOR=58>
+BREAK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

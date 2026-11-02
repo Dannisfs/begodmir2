@@ -1,0 +1,77 @@
+{
+[@正常登录]
+#IF
+#ACT
+  CLIENTCMD HideIconEffects 至尊特权 1
+  CLIENTCMD HideIconEffects 名人堂 1
+  CLIENTCMD HideIconEffects 爵位捐献 1
+  CLIENTCMD HideIconEffects 沙城捐献 1
+  CLIENTCMD HideIconEffects 装备回收 1
+  CLIENTCMD HideIconEffects 宝石系统 1
+  CLIENTCMD HideIconEffects 装备鉴定 1
+  CLIENTCMD HideIconEffects 装备强化 1
+  CLIENTCMD HideIconEffects 战灵系统 1
+  CLIENTCMD HideIconEffects 深渊副本 1
+  CLIENTCMD HideIconEffects 聊天室 1
+
+#IF
+  equal T1 
+#ACT
+  MAPMOVE DDDT 27 29 3
+break
+
+#IF
+  SMALL <$RUNDATEMIN> 30
+#ACT
+  MAPMOVE DDDT 27 29 3
+BREAK
+
+#IF
+  SMALL U4 4
+#ACT
+  MAP DDDT
+BREAK
+
+#IF
+  CHECKLEVELEX > 35
+#ACT
+  MAPMOVE 3 329 328 3
+#ELSEACT
+  MAPMOVE DDDT 27 29 3
+BREAK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

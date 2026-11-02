@@ -1,0 +1,5 @@
+[@MAIN]
+#IF
+#ACT
+  #CALL [\Market_Def\盟重\游戏功能\3装备强化-3.txt] @ZBQH
+BREAK

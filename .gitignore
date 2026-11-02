@@ -1,0 +1,61 @@
+# ==========================================
+# GOD Legend of Mir 2 - Git Ignore
+# ==========================================
+
+# Large Archives & Packages
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.apk
+*.ipa
+*.pdb
+*.ilk
+
+# Video & Media Resources (exceeds GitHub 100MB limit)
+*.mp4
+*.avi
+*.mkv
+*.flv
+*.mov
+*.wmv
+
+# Redundant Backup / Offline Package Folders
+/服务端/
+/PC客户端/
+/安卓客户端/
+/教程和资源/
+/GODbuild20261031/
+
+# MySQL & Runtime Data
+**/data/ib_logfile*
+**/data/ibdata1
+**/data/auto.cnf
+**/data/*.err
+**/data/*.pid
+**/Log/
+**/Logs/
+**/__history/
+*.log
+*.tmp
+*.bak
+*.dcu
+*.~*
+
+# Microclient Large Asset Packs (> 100MB)
+**/phpstudy_pro/WWW/VER1/data/
+**/cache/
+**/assets/data/*.wil
+**/assets/data/*.Wil
+
+# OS and IDE temporary files
+Thumbs.db
+Desktop.ini
+.DS_Store
+.idea/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates

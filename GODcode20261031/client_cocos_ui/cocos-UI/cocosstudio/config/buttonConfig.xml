@@ -1,0 +1,53 @@
+﻿﻿﻿﻿﻿﻿﻿﻿﻿<?xml version="1.0" encoding="utf-8"?>
+<Config VER="1.0">
+    <!--基础操作类-->
+    <!--alginX 相对于窗口水平对齐方式0左对齐1右对齐2中心对齐 默认0-->
+    <!--alginY 相对于窗口垂直对齐方式0下对齐1上对齐2中心对齐 默认0-->
+    <!--isOnlyPC 0都显示1只显示PC2只显示手机 默认0-->
+    <Button name="普攻" type="1" buttonType="99" magicID="-1" iconPath="icon/pugong.png" x="195" y="69" alginX="1" background="0" index="-1" isHide="1" isOnlyPC="2"/>
+    <Button name="攻击人物" type="1" buttonType="135" magicID="-1" iconPath="icon/gongjiguaiwu.png" x="100" y="164" alginX="1" background="0" index="-1" isHide="1" isOnlyPC="2"/>
+    <Button name="攻击怪物" type="1" buttonType="136" magicID="-1" iconPath="icon/gongjirenwu.png" x="218" y="30" alginX="1" background="0" index="-1" isHide="1" isOnlyPC="2"/>
+    <Button name="强攻" type="1" buttonType="302" magicID="-1" iconPath="icon/qianggong.png" x="65" y="30" alginX="1" background="2" index="-1" isHide="1" isOnlyPC="2"/>
+    <Button name="拾取" type="1" buttonType="209" magicID="-1" iconPath="icon/main_shiqu.png" x="70" y="250" alginX="1" background="2" index="-1" isHide="1" isOnlyPC="2"/>
+    <Button name="角色" type="1" buttonType="101" magicID="-1" iconPath="newui/1900013010.png" x="330" y="98" alginX="2" background="0" index="-1" isHide="1"/>
+    <Button name="背包" type="1" buttonType="100" magicID="-1" iconPath="newui/1900013011.png" x="330" y="30" alginX="2" background="0" index="-1" isHide="1"/>
+    <Button name="远程仓库" type="1" csb="BackPack.csb" path="backGround/ItemContainer/item_0" buttonType="408" magicID="-1" iconPath="tianlong/gn/1900015210.png" x="270" y="-361" background="2" script="ycck.txt"/>
+    <Button name="技能" type="1" buttonType="102" magicID="-1" iconPath="tianlong/gn/t003.png" x="130" y="484" alginX="1" alginY="0" background="0" index="-1" isHide="1"/>
+    <Button name="摆摊" type="1" buttonType="106" magicID="-1" iconPath="tianlong/gn/t002.png" x="200" y="484" alginX="1" background="2" index="-1" isHide="1" script="baitan.txt"/>
+    <Button name="交易" type="1" buttonType="105" magicID="-1" iconPath="tianlong/gn/t001.png" x="270" y="484" alginX="1" background="2" index="-1" isHide="1"/>
+    <Button name="组队" type="1" buttonType="104" magicID="-1" iconPath="tianlong/gn/t006.png" x="60" y="400" alginX="1" background="2" index="-1" isHide="1"/>
+    <Button name="行会" type="1" buttonType="103" magicID="-1" iconPath="tianlong/gn/t005.png" x="130" y="400" alginX="1" background="2" index="-1" isHide="1"/>
+    <Button name="技能复位" type="1" buttonType="330" magicID="-1" iconPath="tianlong/gn/t007.png" x="200" y="400" alginX="1" background="2" index="-1" isHide="1" script="jnfw.txt"/>
+    <Button name="挂机" type="1" buttonType="114" magicID="-1" iconPath="tianlong/gn/t004.png" toggleImg="tianlong/gn/t004-1.png" x="270" y="400" alginX="1" background="0" index="-1" isHide="1" toggle="" togglestate="1"/>
+    <Button name="商城" type="1" buttonType="108" magicID="-1" iconPath="tianlong/effects/zxc1.png" x="185" y="33" alginX="2" background="0" index="-1" isHide="1"/>
+    <Button name="布局" type="1" buttonType="110" magicID="-1" iconPath="newui/99jineng.png" x="232" y="66" alginX="1" alginY="1" background="0" index="-1" isHide="1"/>
+    <Button name="设置" type="1" buttonType="109" magicID="-1" iconPath="newui/99shezhi.png" x="232" y="131" alginX="1" alginY="1" background="0" index="-1" isHide="1"/>
+    <Button name="小退" type="1" buttonType="113" magicID="-1" iconPath="newui/99xiaotui.png" x="232" y="196" alginX="1" alginY="1" background="0" index="-1" isHide="1"/>
+
+    <!--基础操作类
+	<Button name="挂机" type="1" buttonType="114" magicID="-1" iconPath="tianlong/gn/t004.png" x="270" y="350" alginX="1" background="0" index="-1" isHide="1"/>
+	
+    <Button name="排行榜" type="1" buttonType="309" magicID="-1" iconPath="tianlong/gn/zxc2-1.png" x="-305" y="27" alginX="2" background="0" index="-1" isHide="1" script="phb.txt"/>
+    <Button name="神器" type="1" csb="Character.csb" path="backGround/equipPanel/yupei" buttonType="400" magicID="-1" iconPath="tianlong/gn/sq.png" x="-213" y="320" background="2" script="sq.txt"/>
+    <Button name="主宰" type="1" csb="Character.csb" path="backGround/equipPanel/yupei" buttonType="401" magicID="-1" iconPath="tianlong/gn/zz.png" x="-213" y="390" background="2" script="zz.txt"/>
+    <Button name="会员特权" type="1" buttonType="310" magicID="-1" iconPath="tianlong/gn/icon001.png" iconEffects="BtnEffects/0#8#100" x="30" y="114" alginX="0" alginY="1" background="2" index="-1" isHide="1" script="huiyuan.txt"/>
+    <Button name="首充" type="1" buttonType="311" magicID="-1" iconPath="tianlong/gn/icon012.png" iconEffects="BtnEffects/0#8#100" x="110" y="114" alginX="0" alginY="1" background="2" index="-1" isHide="1" script="sc.txt"/>
+    <Button name="战灵" type="1" buttonType="312" magicID="-1" iconPath="tianlong/gn/icon026.png" iconEffects="BtnEffects/0#8#100" x="190" y="114" alginX="0" alginY="1" background="2" index="-1" isHide="1" script="zl.txt"/>
+    <Button name="每日礼包" type="1" buttonType="313" magicID="-1" iconPath="tianlong/gn/icon014.png" iconEffects="BtnEffects/0#8#100" x="270" y="114" alginX="0" alginY="1" background="2" index="-1" isHide="1" script="mrlb.txt"/>
+    <Button name="开服活动" type="1" buttonType="314" magicID="-1" iconPath="tianlong/gn/icon015.png" iconEffects="BtnEffects/0#8#100" x="350" y="114" alginX="0" alginY="1" background="2" index="-1" isHide="1" script="kfhd.txt"/>
+    <Button name="狂暴之力" type="1" buttonType="315" magicID="-1" iconPath="tianlong/gn/icon016.png" iconEffects="BtnEffects/0#8#100" x="30" y="194" alginX="0" alginY="1" background="2" index="-1" isHide="1" script="kb.txt"/>
+    <Button name="斗气" type="1" buttonType="316" magicID="-1" iconPath="tianlong/gn/icon025.png" iconEffects="BtnEffects/0#8#100" x="110" y="194" alginX="0" alginY="1" background="2" index="-1" isHide="1" script="dq.txt"/>
+    <Button name="活动" type="1" buttonType="317" magicID="-1" iconPath="tianlong/gn/icon017.png" iconEffects="BtnEffects/0#8#100" x="190" y="194" alginX="0" alginY="1" background="2" index="-1" isHide="1" script="hd.txt"/>
+    <Button name="装备回收" type="1" buttonType="318" magicID="-1" iconPath="tianlong/gn/icon020.png" iconEffects="BtnEffects/0#8#100" x="270" y="194" alginX="0" alginY="1" background="2" index="-1" isHide="1" script="zbhs.txt"/>
+    <Button name="成就奖励" type="1" buttonType="319" magicID="-1" iconPath="tianlong/gn/icon011.png" iconEffects="BtnEffects/0#8#100" x="350" y="194" alginX="0" alginY="1" background="2" index="-1" isHide="1" script="cj.txt"/>
+    <!--	<Button name="新春活动" type="1" buttonType="320" magicID="-1" iconPath="tianlong/gn/icon027.png" iconEffects="BtnEffects/0#8#100" x="380" y="560" alginX="1" background="2" index="-1" isHide="1" script="xchd.txt"/>-->
+    <!---------->
+    <Button name="快捷栏1" type="2" buttonType="129" magicID="-1" iconPath="newui/97kj.png" x="-195" y="150" alginX="2" background="0" index="-1" isHide="1" itemName="土城传送石"/>
+    <Button name="快捷栏2" type="2" buttonType="130" magicID="-1" iconPath="newui/97kj.png" x="-132" y="150" alginX="2" background="0" index="-1" isHide="1" itemName="随机传送石"/>
+    <Button name="快捷栏3" type="2" buttonType="131" magicID="-1" iconPath="newui/97kj.png" x="-69" y="150" alginX="2" background="0" index="-1" isHide="1" itemName="金创药(小量)"/>
+    <Button name="快捷栏4" type="2" buttonType="132" magicID="-1" iconPath="newui/97kj.png" x="-6" y="150" alginX="2" background="0" index="-1" isHide="1" itemName="魔法药(小量)"/>
+    <Button name="快捷栏5" type="2" buttonType="133" magicID="-1" iconPath="newui/97kj.png" x="57" y="150" alginX="2" background="0" index="-1" isHide="1" itemName=""/>
+    <Button name="快捷栏6" type="2" buttonType="134" magicID="-1" iconPath="newui/97kj.png" x="120" y="150" alginX="2" background="0" index="-1" isHide="1" itemName=""/>
+    <!--<Button name="活动类收纳按钮1" type="1" buttonType="413" magicID="-1" iconPath="tianlong/UI/0465.png" toggleImg="tianlong/UI/0464.png" x="0" y="185" alginX="0" alginY="1" background="0" index="-1" isHide="1" toggle="锻造披风|成名称号|装备强化|境界转生|法宝法轮|魂装合成|宝石镶嵌|材料合成|成就奖励|会员特权|首充|战灵|每日礼包|开服活动|狂暴之力|活动|体质强化|装备回收|斗气|新春活动" togglestate="1"/>-->
+    <Button name="活动类收纳按钮2" type="1" buttonType="414" magicID="-1" iconPath="newui/an001.png" toggleImg="newui/an002.png" x="60" y="480" alginX="1" background="0" index="-1" isHide="1" toggle="挂机|摆摊|交易|组队|行会|技能|属下|技能复位|排行榜" togglestate="1"/>
+</Config>

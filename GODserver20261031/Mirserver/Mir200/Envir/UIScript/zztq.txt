@@ -1,0 +1,12 @@
+[@MAIN]
+#IF
+#ACT
+  #CALL [\Market_Def\盟重\游戏功能\9至尊特权-3.txt] @ZZTQ
+
+
+
+
+
+
+
+

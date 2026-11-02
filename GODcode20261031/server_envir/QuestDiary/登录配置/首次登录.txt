@@ -1,0 +1,84 @@
+{
+[@新人登录]
+#IF
+#ACT
+  MOV T2 <$SERVERNAME><$USERNAME>
+  CLIENTCMD HideIconEffects 至尊特权 1
+  CLIENTCMD HideIconEffects 名人堂 1
+  CLIENTCMD HideIconEffects 爵位捐献 1
+  CLIENTCMD HideIconEffects 沙城捐献 1
+  CLIENTCMD HideIconEffects 装备回收 1
+  CLIENTCMD HideIconEffects 宝石系统 1
+  CLIENTCMD HideIconEffects 装备鉴定 1
+  CLIENTCMD HideIconEffects 装备强化 1
+  CLIENTCMD HideIconEffects 战灵系统 1
+  CLIENTCMD HideIconEffects 深渊副本 1
+  CLIENTCMD HideIconEffects 聊天室 1
+
+#IF
+  SMALL <$RUNDATEMIN> 30
+#ACT
+  MAPMOVE DDDT 27 29 3
+  GIVE 盟重回城石 1
+  GIVE 随机传送石 1
+  GIVE 强效金创药 99
+  GIVE 强效魔法药 99
+#ELSEACT
+  MAPMOVE DDDT 27 29 3
+  GIVE 盟重回城石 1
+  GIVE 随机传送石 1
+  GIVE 强效金创药 99
+  GIVE 强效魔法药 99
+
+#IF
+  Gender Man
+#ACT
+  GIVE 木剑 1
+  GIVE 布甲 1
+
+#IF
+  Gender Woman
+#ACT
+  GIVE 木剑 1
+  GIVE 布衣 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,32 @@
+[@MAIN]
+#IF
+#ACT
+  UIDLG Close jiaoben003
+  UIDLG Open jiaoben003 400 150 0 0 1
+  UIDLG SetRichText jiaoben003 WBK_001:　\\<　　　　　　　　本地图爆出超神级装备/SCOLOR=58>\\　\\<　　　　　　　　　等级需求：/SCOLOR=254><130级/SCOLOR=250>\\<　　　　　　　　　刷怪速度：/SCOLOR=254><极快/SCOLOR=250>\\<　　　　　　　　　怪物难度：/SCOLOR=254><★★/SCOLOR=250>\\<　　　　　　　　　装备爆率：/SCOLOR=254><极高/SCOLOR=250>
+  UIDLG SetButtonGOTO jiaoben003 button_001:@进入祖玛寺庙
+#SAY
+  UICMD
+  <进入祖玛寺庙/@进入祖玛寺庙>\
+BREAK
+
+
+[@进入祖玛寺庙]
+#IF
+  CHECKLEVELEX > 129
+#ACT
+  MAPMOVE P016 220 339
+  UIDLG Close jiaoben003
+#ELSEACT
+  MESSAGEBOX 　\\　\\<　　　　等级不足，无法进入！/SCOLOR=58>
+BREAK
+
+
+
+
+
+
+
+
+
+

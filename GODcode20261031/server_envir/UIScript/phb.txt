@@ -1,0 +1,179 @@
+(@@CreateHero @@LyCreateHero)
+[@main]
+#IF
+  ;HAVEHERO
+#SAY
+<----------------------------------------------------------------------------------------/SCOLOR=35>\
+<删除英雄/@删除英雄>　<英雄升级/@英雄升级>　<英雄降级/@英雄降级>　<满血/@满血>　<英雄学技能/@英雄学技能>　<加属性/@加属性>\
+<加任务/@加任务>　<删任务/@删任务>　<战战合击/@战战合击>　<开始攻城/@开始攻城>\
+<----------------------------------------------------------------------------------------/SCOLOR=35>\
+#ELSESAY
+<----------------------------------------------------------------------------------------/SCOLOR=35>\
+<领取英雄/@@CreateHero>\
+<----------------------------------------------------------------------------------------/SCOLOR=35>\
+
+
+[@开始攻城]
+#IF
+#ACT
+  ADDATTACKSABUKALL 0
+BREAK
+
+
+[@战战合击]
+#IF
+#ACT
+  H.ADDSKILL 近战合击
+  ADDSKILL 近战合击
+BREAK
+
+[@加任务]
+#IF
+#ACT
+  SETMISSION + 1
+BREAK
+[@删任务]
+#IF
+#ACT
+  SETMISSION - 1
+BREAK
+
+
+[@加属性]
+#IF
+#ACT
+  ChangeHumAbility 3 + 100 200000 100
+  ChangeHumAbility 29 + 10 200000 100
+BREAK
+
+
+
+[@英雄学技能]
+#IF
+  H.CheckJob Warrior
+#ACT
+  H.ADDSKILL 刺杀剑术
+  H.ADDSKILL 野蛮冲撞
+  H.ADDSKILL 烈火剑法
+BREAK
+
+#IF
+  H.CheckJob Wizard
+#ACT
+  H.ADDSKILL 雷电术
+  H.ADDSKILL 抗拒火环
+  H.ADDSKILL 魔法盾
+BREAK
+
+#IF
+  H.CheckJob Taoist
+#ACT
+  H.ADDSKILL 召唤神兽
+  H.ADDSKILL 灵魂火符
+  H.ADDSKILL 施毒术
+  H.ADDSKILL 神圣战甲术
+  H.ADDSKILL 精神力战法
+BREAK
+
+
+
+
+
+
+
+
+
+
+
+
+
+[@英雄升级]
+#IF
+#ACT
+  CHANGELEVEL + 10
+  H.CHANGELEVEL + 10
+BREAK
+[@英雄降级]
+#IF
+#ACT
+  CHANGELEVEL - 10
+  H.CHANGELEVEL - 10
+BREAK
+
+[@满血]
+#IF
+#ACT
+AddhpPer + 100
+AddMpPer + 100
+H.AddhpPer + 100
+H.AddMpPer + 100
+BREAK
+
+[@@CreateHero]
+#IF
+  HAVEHERO
+#ACT
+  MessAgeBox 提示：你已经有英雄了!!
+#ELSESAY
+<--------------------------------------------------------------------------------------/SCOLOR=229>\ 　\
+　　<[男战英雄]/@CREATEHERO_WARR_MAN>　　　　　　　　　　　　　　<[女战英雄]/@CREATEHERO_WARR_WOM>\　\
+　　<[男法英雄]/@CREATEHERO_WIZA_MAN>　　　　　　　　　　　　　　<[女法英雄]/@CREATEHERO_WIZA_WOM>\　\
+　　<[男道英雄]/@CREATEHERO_TAOS_MAN>　　　　　　　　　　　　　　<[女道英雄]/@CREATEHERO_TAOS_WOM>\　\
+　　<[返回]/@main>\
+<--------------------------------------------------------------------------------------/SCOLOR=229>\ 
+
+[@CREATEHERO_WARR_MAN]
+#Act
+CREATEHERO 0 0
+BREAK
+[@CREATEHERO_WARR_WOM]
+#Act
+CREATEHERO 0 1
+BREAK
+[@CREATEHERO_WIZA_MAN]
+#Act
+CREATEHERO 1 0
+BREAK
+[@CREATEHERO_WIZA_WOM]
+#Act
+CREATEHERO 1 1
+BREAK
+[@CREATEHERO_TAOS_MAN]
+#Act
+CREATEHERO 2 0
+BREAK
+[@CREATEHERO_TAOS_WOM]
+#Act
+CREATEHERO 2 1
+BREAK
+
+
+[@删除英雄]
+#IF
+  HAVEHERO
+#ELSEACT
+  MessAgeBox 提示：你还未申请英雄!!
+BREAK
+
+#IF
+  CHECKHEROONLINE
+#ACT
+  MessAgeBox 请先把英雄召回再进行删除！
+BREAK
+
+#IF
+#ACT
+  CLEARHEROSKILL
+  DELETEHERO
+  MessAgeBox 提示：删除成功！！
+BREAK
+
+
+
+
+
+
+
+
+
+

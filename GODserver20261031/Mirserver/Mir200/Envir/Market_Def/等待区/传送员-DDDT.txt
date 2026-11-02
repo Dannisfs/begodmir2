@@ -1,0 +1,19 @@
+[@MAIN]
+欢迎来到传奇世界！\ \
+你想前往哪里开始历练？\ \
+<【前往比奇省新人村】/@to_biqi>\ \
+<【前往盟重省土城】/@to_mengzhong>\
+
+[@to_biqi]
+#ACT
+#CALL [\任务配置\主线任务.txt] @任务1
+MAPMOVE 0 288 616 3
+SendNewLineMsg 1 254 0 0 0 0 0 欢迎<【<$USERNAME>】/SCOLOR=250>正式进入比奇省！
+BREAK
+
+[@to_mengzhong]
+#ACT
+#CALL [\任务配置\主线任务.txt] @任务1
+MAPMOVE 3 329 328 3
+SendNewLineMsg 1 254 0 0 0 0 0 欢迎<【<$USERNAME>】/SCOLOR=250>正式进入盟重省！
+BREAK

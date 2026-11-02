@@ -1,0 +1,143 @@
+[@MAIN]
+#IF
+#ACT
+  GOTO @ZBQH
+BREAK
+
+
+[@ZBQH]
+{
+#IF
+#ACT
+  #CALL [\任务配置\主线任务.txt] @任务12
+  CLIENTCMD HideIconEffects 装备强化 1
+
+#IF
+#ACT
+  UIDLG Close ALL
+  UIDLG Open jiaoben007 400 150 0 0 1
+  UIDLG LimitItemSlot jiaoben018 item_001:5:10:11:15:19:24:22:64:62:51:53:200:202:204
+  UIDLG LockItemSlot jiaoben007 item_002:1
+  UIDLG SetItemSlot jiaoben007 item_002:注释
+  UIDLG ItemSlotTip jiaoben007 item_002:<强化上限+15/SCOLOR=251>\\<每强化1级增加5点攻击力/SCOLOR=58>\\<全套16件+6：攻防血+10%/SCOLOR=254>\\<全套16件+9：攻防血+20%/SCOLOR=254>\\<全套16件+12：攻防血+30%/SCOLOR=254>\\<全套16件+15：攻防血+50%/SCOLOR=254>
+  UIDLG BindItemSlot jiaoben007 item_001:N$待强化装备
+  UIDLG SetButtonGOTO  jiaoben007 button_001:@开始装备强化
+#SAY
+UICMD
+<开始装备强化/@开始装备强化>\
+BREAK
+
+[@开始装备强化]
+#IF
+#ACT
+  GOTO @强化几率配置
+
+#IF
+  CheckItemSlot N$待强化装备
+#ELSEACT
+  MessAgeBox <你还没有放入需要强化的装备!/SCOLOR=58>
+BREAK
+
+#IF
+  CheckItem 强化石 1
+#ELSEACT
+  MessAgeBox <你的身上没有强化石!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKNEWITEMVALUE 0 101 > 14 4 N$待强化装备
+#ACT
+  MessAgeBox <该装备已强化至满级!/SCOLOR=58>
+BREAK
+
+#IF
+  random <$STR(N$装备强化几率)>
+#ACT
+  TAKE 强化石 1
+  UPGRADEITEMEX 0 101 0 1 0 4 N$待强化装备 0 1
+  MessAgeBox <装备强化成功!/SCOLOR=250>
+#ELSEACT
+  TAKE 强化石 1
+  ;SETNEWITEMVALUE 0 101 - 1 4 N$待强化装备
+  MessAgeBox <装备强化失败!/SCOLOR=58>
+BREAK
+
+[@强化几率配置]
+#IF
+  CHECKNEWITEMVALUE 0 101 < 1 4 N$待强化装备
+#ACT
+  MOV N$装备强化几率 0
+BREAK
+#IF
+  CHECKNEWITEMVALUE 0 101 = 1 4 N$待强化装备
+#ACT
+  MOV N$装备强化几率 1
+BREAK
+#IF
+  CHECKNEWITEMVALUE 0 101 = 2 4 N$待强化装备
+#ACT
+  MOV N$装备强化几率 1
+BREAK
+#IF
+  CHECKNEWITEMVALUE 0 101 = 3 4 N$待强化装备
+#ACT
+  MOV N$装备强化几率 4
+BREAK
+#IF
+  CHECKNEWITEMVALUE 0 101 = 4 4 N$待强化装备
+#ACT
+  MOV N$装备强化几率 5
+BREAK
+#IF
+  CHECKNEWITEMVALUE 0 101 = 5 4 N$待强化装备
+#ACT
+  MOV N$装备强化几率 6
+BREAK
+#IF
+  CHECKNEWITEMVALUE 0 101 = 6 4 N$待强化装备
+#ACT
+  MOV N$装备强化几率 8
+BREAK
+#IF
+  CHECKNEWITEMVALUE 0 101 = 7 4 N$待强化装备
+#ACT
+  MOV N$装备强化几率 10
+BREAK
+#IF
+  CHECKNEWITEMVALUE 0 101 = 8 4 N$待强化装备
+#ACT
+  MOV N$装备强化几率 12
+BREAK
+#IF
+  CHECKNEWITEMVALUE 0 101 = 9 4 N$待强化装备
+#ACT
+  MOV N$装备强化几率 15
+BREAK
+#IF
+  CHECKNEWITEMVALUE 0 101 = 10 4 N$待强化装备
+#ACT
+  MOV N$装备强化几率 18
+BREAK
+#IF
+  CHECKNEWITEMVALUE 0 101 = 11 4 N$待强化装备
+#ACT
+  MOV N$装备强化几率 20
+BREAK
+#IF
+  CHECKNEWITEMVALUE 0 101 = 12 4 N$待强化装备
+#ACT
+  MOV N$装备强化几率 22
+BREAK
+#IF
+  CHECKNEWITEMVALUE 0 101 = 13 4 N$待强化装备
+#ACT
+  MOV N$装备强化几率 26
+BREAK
+#IF
+  CHECKNEWITEMVALUE 0 101 = 14 4 N$待强化装备
+#ACT
+  MOV N$装备强化几率 30
+BREAK
+
+
+}

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GOD引擎 专属游戏登录器</title>
+    <hta:application 
+        id="oGODLauncher" 
+        applicationname="GODLauncher" 
+        border="thin" 
+        borderstyle="normal" 
+        caption="yes" 
+        icon="" 
+        maximizebutton="no" 
+        minimizebutton="yes" 
+        showintaskbar="yes" 
+        singleinstance="yes" 
+        sysmenu="yes" 
+        version="1.0" 
+        windowstate="normal"
+    />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft YaHei", "Segoe UI", sans-serif; }
+        body {
+            background: #0d0c10 radial-gradient(circle at 50% 30%, #201a14 0%, #0c0b0e 100%);
+            color: #eee;
+            width: 820px;
+            height: 580px;
+            overflow: hidden;
+            user-select: none;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #b8860b;
+        }
+        /* Header Banner */
+        .launcher-header {
+            height: 110px;
+            background: linear-gradient(180deg, #1f1a14 0%, #0d0c10 100%);
+            border-bottom: 2px solid #d4af37;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .launcher-logo h1 {
+            font-size: 26px;
+            letter-spacing: 2px;
+            color: #ffd700;
+            text-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+        }
+        .launcher-logo p {
+            font-size: 12px;
+            color: #888;
+            margin-top: 4px;
+        }
+        .server-status-pill {
+            display: flex;
+            gap: 12px;
+            background: rgba(0,0,0,0.5);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 12px;
+        }
+        .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+        .dot.online { background: #2ecc71; box-shadow: 0 0 8px #2ecc71; }
+        .dot.offline { background: #e74c3c; box-shadow: 0 0 8px #e74c3c; }
+
+        /* Main Workspace */
+        .launcher-body {
+            flex: 1;
+            display: flex;
+            padding: 16px;
+            gap: 16px;
+        }
+
+        /* Left: Server and News */
+        .panel-left {
+            flex: 1;
+            background: rgba(20, 20, 28, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .panel-title {
+            font-size: 14px;
+            color: #ffd700;
+            font-weight: bold;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 6px;
+        }
+        .server-item {
+            background: rgba(255, 215, 0, 0.08);
+            border: 1px solid #d4af37;
+            padding: 10px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .server-item.selected {
+            background: linear-gradient(90deg, rgba(212,175,55,0.3) 0%, rgba(212,175,55,0.1) 100%);
+            border-color: #ffd700;
+        }
+        .notice-box {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #aaa;
+            overflow-y: auto;
+        }
+
+        /* Right: Fast Register Form */
+        .panel-right {
+            width: 290px;
+            background: rgba(20, 20, 28, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .form-row label {
+            font-size: 11px;
+            color: #999;
+        }
+        .form-row input {
+            background: #09090d;
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 7px 10px;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 12px;
+            outline: none;
+        }
+        .form-row input:focus {
+            border-color: #ffd700;
+        }
+        .btn-reg {
+            background: linear-gradient(180deg, #d4af37, #997510);
+            border: 1px solid #ffd700;
+            color: #000;
+            font-weight: bold;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+        .btn-reg:hover {
+            background: #ffd700;
+        }
+
+        /* Bottom Control Bar */
+        .launcher-footer {
+            height: 90px;
+            background: #111015;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 12px;
+        }
+        .btn-link {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            padding: 8px 14px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .btn-link:hover {
+            color: #ffd700;
+            border-color: #d4af37;
+        }
+
+        .btn-start-game {
+            background: linear-gradient(180deg, #f39c12 0%, #d35400 100%);
+            border: 2px solid #ffd700;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            padding: 12px 36px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(243, 156, 18, 0.5);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+        .btn-start-game:hover {
+            background: linear-gradient(180deg, #ffae19 0%, #e65100 100%);
+            box-shadow: 0 0 28px rgba(255, 215, 0, 0.8);
+        }
+    </style>
+</head>
+<body onload="initWindow()">
+
+    <!-- 顶部标题与状态 -->
+    <div class="launcher-header">
+        <div class="launcher-logo">
+            <h1>GOD 引擎专属极速登录器</h1>
+            <p>2026 最新跨平台商业版 · 双端联调专用</p>
+        </div>
+        <div class="server-status-pill">
+            <span><span class="dot online" id="dot-web"></span>Web 88</span>
+            <span><span class="dot online" id="dot-db"></span>MySQL 3306</span>
+            <span><span class="dot online" id="dot-gate"></span>网关 7000/8090</span>
+        </div>
+    </div>
+
+    <!-- 主体区域 -->
+    <div class="launcher-body">
+        <!-- 左侧：区服选择与系统公告 -->
+        <div class="panel-left">
+            <div class="panel-title">选择游戏服务器</div>
+            <div class="server-item selected">
+                <div>
+                    <strong style="color:#ffd700; font-size:14px;">[1区] 热血首服 (测试大区)</strong>
+                    <div style="font-size:11px; color:#aaa; margin-top:2px;">服务器地址: 127.0.0.1 (推荐本地极速)</div>
+                </div>
+                <span style="color:#2ecc71; font-size:12px; font-weight:bold;">流畅</span>
+            </div>
+
+            <div class="panel-title" style="margin-top:6px;">服务器公告</div>
+            <div class="notice-box">
+                <p style="color:#ffd700; font-weight:bold;">★ 欢迎体验 GOD 引擎 2026 最新优化版！</p>
+                <p>1. 已全面修复 100 秒心跳断线缺陷与 RunGate 网关网络卡死问题。</p>
+                <p>2. 修复技能书学习拦截分支，支持双击技能书直接学习。</p>
+                <p>3. 右侧可直接一键免验证快速注册游戏账号并自带 50000 初始元宝。</p>
+                <p>4. 进游戏前请确保服务端各网关已在后台加载完毕。</p>
+            </div>
+        </div>
+
+        <!-- 右侧：登录器内置极速注册 -->
+        <div class="panel-right">
+            <div class="panel-title">极速注册游戏通行证</div>
+            <div class="form-row">
+                <label>游戏账号 (英文/数字)</label>
+                <input type="text" id="reg-user" placeholder="输入 3~18 位账号" value="player1">
+            </div>
+            <div class="form-row">
+                <label>登录密码</label>
+                <input type="password" id="reg-pass" placeholder="输入密码" value="123456">
+            </div>
+            <div class="form-row">
+                <label>安全码 (改密找回专用)</label>
+                <input type="text" id="reg-sec" placeholder="安全码" value="888888">
+            </div>
+            <div class="form-row">
+                <label>初始赠送元宝</label>
+                <input type="number" id="reg-gold" value="50000">
+            </div>
+            <button class="btn-reg" onclick="doRegister()">立即创建并写入数据库</button>
+            <div id="reg-msg" style="font-size:11px; min-height:16px; margin-top:4px; text-align:center;"></div>
+        </div>
+    </div>
+
+    <!-- 底部控制栏 -->
+    <div class="launcher-footer">
+        <div class="footer-links">
+            <button class="btn-link" onclick="openWebAdmin()">打开网页管理中心</button>
+            <button class="btn-link" onclick="startServer()">一键启动服务端</button>
+        </div>
+        <button class="btn-start-game" onclick="startGame()">开始游戏</button>
+    </div>
+
+    <script>
+        function initWindow() {
+            try {
+                window.resizeTo(840, 620);
+                window.moveTo((screen.width - 840) / 2, (screen.height - 620) / 2);
+            } catch(e) {}
+        }
+
+        // 启动客户端
+        function startGame() {
+            try {
+                var shell = new ActiveXObject("WScript.Shell");
+                shell.CurrentDirectory = "D:\\000GOD\\GODclient20261031";
+                shell.Run("PCClient_Latest.exe", 1, false);
+            } catch(e) {
+                alert("启动客户端失败，请检查文件是否存在: " + e.message);
+            }
+        }
+
+        // 打开网页管理中心
+        function openWebAdmin() {
+            try {
+                var shell = new ActiveXObject("WScript.Shell");
+                shell.Run("http://127.0.0.1:88/web/");
+            } catch(e) {
+                window.open("http://127.0.0.1:88/web/");
+            }
+        }
+
+        // 启动服务端
+        function startServer() {
+            try {
+                var shell = new ActiveXObject("WScript.Shell");
+                shell.CurrentDirectory = "D:\\000GOD";
+                shell.Run("start_server.bat", 1, false);
+            } catch(e) {
+                alert("启动服务端失败: " + e.message);
+            }
+        }
+
+        // 登录器内置快速注册
+        function doRegister() {
+            var user = document.getElementById("reg-user").value;
+            var pass = document.getElementById("reg-pass").value;
+            var sec  = document.getElementById("reg-sec").value;
+            var gold = document.getElementById("reg-gold").value;
+            var msgEl = document.getElementById("reg-msg");
+
+            if (!user || !pass) {
+                msgEl.style.color = "#e74c3c";
+                msgEl.innerText = "账号与密码不能为空！";
+                return;
+            }
+
+            msgEl.style.color = "#ffd700";
+            msgEl.innerText = "正在注册账号...";
+
+            try {
+                var xhr = new ActiveXObject("MSXML2.XMLHTTP");
+                xhr.open("POST", "http://127.0.0.1:88/api.php?action=register", false);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                var params = "username=" + encodeURIComponent(user) + 
+                             "&password=" + encodeURIComponent(pass) + 
+                             "&repass=" + encodeURIComponent(pass) + 
+                             "&seccode=" + encodeURIComponent(sec) + 
+                             "&initgold=" + encodeURIComponent(gold);
+                xhr.send(params);
+
+                if (xhr.status == 200) {
+                    var res = eval("(" + xhr.responseText + ")");
+                    if (res.code == 200) {
+                        msgEl.style.color = "#2ecc71";
+                        msgEl.innerText = "注册成功！请点击【开始游戏】登录！";
+                    } else {
+                        msgEl.style.color = "#e74c3c";
+                        msgEl.innerText = res.msg;
+                    }
+                } else {
+                    msgEl.style.color = "#e74c3c";
+                    msgEl.innerText = "连接服务器失败 (HTTP " + xhr.status + ")";
+                }
+            } catch(e) {
+                msgEl.style.color = "#e74c3c";
+                msgEl.innerText = "请求异常，请确认 Web 88端口已启动！";
+            }
+        }
+    </script>
+</body>
+</html>

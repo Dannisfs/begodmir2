@@ -1,0 +1,9 @@
+[0603/161230:ERROR:proxy_service_factory.cc(136)] Cannot use V8 Proxy resolver in single process mode.
+[0603/164942:ERROR:proxy_service_factory.cc(136)] Cannot use V8 Proxy resolver in single process mode.
+[0603/165102:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0505/111715:ERROR:proxy_service_factory.cc(136)] Cannot use V8 Proxy resolver in single process mode.
+[0505/111806:ERROR:proxy_service_factory.cc(136)] Cannot use V8 Proxy resolver in single process mode.
+[0510/194609:ERROR:proxy_service_factory.cc(136)] Cannot use V8 Proxy resolver in single process mode.
+[0510/222235:ERROR:proxy_service_factory.cc(136)] Cannot use V8 Proxy resolver in single process mode.
+[0510/222308:ERROR:proxy_service_factory.cc(136)] Cannot use V8 Proxy resolver in single process mode.
+[0510/231212:ERROR:proxy_service_factory.cc(136)] Cannot use V8 Proxy resolver in single process mode.

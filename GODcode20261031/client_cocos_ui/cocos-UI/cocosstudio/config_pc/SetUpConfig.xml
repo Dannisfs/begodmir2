@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config>
+  <SetUp ID="107" name="人物显名" type="1" select="1" progress="0" value="0" special="CHARACTER_NAME" />
+  <SetUp ID="108" name="怪物显名" type="1" select="1" progress="0" value="0" special="SHOW_MONSTER_NAME" />
+  <SetUp ID="109" name="NPC显名"  type="1" select="1" progress="0" value="0" special="SHOW_NPC_NAME" />
+  <SetUp ID="110" name="显示血条" type="1" select="1" progress="0" value="0" special="SHOW_BLOOD_STRIP" />
+  <SetUp ID="111" name="数字显血" type="1" select="1" progress="0" value="0" special="SHOW_NUMBER_BLOOD" />
+  <SetUp ID="112" name="数字飘血" type="1" select="1" progress="0" value="0" special="SHOW_NUM_DRIFTING_BLOOD" />
+  <SetUp ID="113" name="自动捡物" type="1" select="1" progress="0" value="0" special="AUTO_PICK_UP" />
+  <SetUp ID="114" name="物品显名" type="1" select="1" progress="0" value="0" special="ITEM_DISPLAY" />
+  <SetUp ID="115" name="显示过滤" type="1" select="1" progress="0" value="0" special="DISPLAY_FILTERING" />
+  <SetUp ID="116" name="隐藏尸体" type="1" select="1" progress="0" value="0" special="HIDDEN_BODY" />
+  <SetUp ID="117" name="是否禁音" type="1" select="1" progress="0" value="0" special="ENABLE_SOUND" />
+  <SetUp ID="118" name="自动解包" type="1" select="1" progress="0" value="0" special="AUTO_UNPACKING" />
+  <SetUp ID="119" name="自动练功" type="2" select="0" progress="30" value="3" special="AUTO_MAGIC" />
+  <SetUp ID="120" name="游戏缩放" type="2" select="0" progress="100" value="0" special="GAME_SCALE" />
+  <SetUp ID="121" name="百分比喝药" type="4" select="1"  progress="0" value="0" special="PERCENT" />
+  <SetUp ID="122" name="血量喝药" type="4" select="0"  progress="0" value="0" special="BLOOD_AMOUNT" />
+  <SetUp ID="123" name="金创药" type="2" select="0"  progress="50" value="0" special="RED_SELECT" />
+  <SetUp ID="124" name="魔法药" type="2" select="0"  progress="50" value="0" special="BLUE_SELECT" />
+  <SetUp ID="125" name="瞬回药" type="2" select="0"  progress="50" value="0" special="MOMENT_SELECT" />
+  <SetUp ID="126" name="修复神水" type="2" select="0"  progress="50" value="0" special="RESTORATION_SELECT" />
+  <SetUp ID="127" name="血量低于" type="3" select="0"  progress="0" value="9999" special="LOW_RANDOM" />
+  <SetUp ID="128" name="刀刀刺杀" type="1" select="1"  progress="0" value="0" special="LONG_HIT" />
+  <SetUp ID="129" name="自动烈火" type="1" select="1"  progress="0" value="0" special="AUTO_FIRE_HIT" />
+  <SetUp ID="130" name="智能半月" type="1" select="1"  progress="0" value="0" special="AUTO_WIDE_HIT" />
+  <SetUp ID="131" name="隔位刺杀" type="1" select="1"  progress="0" value="0" special="SMARTPOS_LONG_HIT" />
+  <SetUp ID="132" name="自动开盾" type="1" select="1"  progress="0" value="0" special="AUTO_OPEN_DEFENCE" />
+  <SetUp ID="133" name="自动隐身" type="1" select="0"  progress="0" value="0" special="AUTO_HIDE" />
+  <SetUp ID="134" name="自动魔防" type="1" select="0"  progress="0" value="0" special="AUTO_MAGIC_DEF" />
+  <SetUp ID="135" name="魔法锁定" type="1" select="1"  progress="0" value="0" special="MAGIC_LOCK" />
+  <SetUp ID="136" name="高亮显示" type="1" select="1"  progress="0" value="0" special="HIGHLIGHT_SHOWITEM" />
+  <SetUp ID="137" name="捡取物品" type="1" select="1"  progress="0" value="0" special="PICKUP_ITEM" />
+  <SetUp ID="138" name="物品显名" type="1" select="1"  progress="0" value="0" special="GOODS_SHOW_NAME" />
+  <SetUp ID="139" name="召唤宝宝" type="1" select="0"  progress="0" value="0" special="CALL_BB" />
+  <SetUp ID="140" name="道士砍怪" type="1" select="0"  progress="0" value="0" special="TAOIST_ACTTCK" />
+  <SetUp ID="141" name="挂机捡物" type="1" select="1"  progress="0" value="0" special="GJ_PICKUP" />
+  <SetUp ID="142" name="背景音乐" type="1" select="1"  progress="0" value="0" special="ENABLE_BGMUSIC" />
+  <SetUp ID="143" name="显示称号" type="1" select="3"  progress="0" value="0" special="ENABLE_SHOWTITLE" />
+  <SetUp ID="156" name="是否移动刺杀" type="3" select="0"  progress="0" value="0" special="MoveAttack" />
+  <SetUp ID="157" name="是否移动施法" type="3" select="0"  progress="0" value="0" special="MoveMagic" />
+</Config>

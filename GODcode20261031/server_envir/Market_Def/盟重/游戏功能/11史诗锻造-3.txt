@@ -1,0 +1,54 @@
+[@MAIN]
+#IF
+#ACT
+  UIDLG Close ALL
+  UIDLG Open jiaoben018 400 150 0 0 1
+  UIDLG BindItemSlot jiaoben018 item_001:N$史诗锻造装备
+  UIDLG SetRichText jiaoben018 WBK_001:<品质加成：/SCOLOR=58><史诗+3%/SCOLOR=241>\\<锻造需求：/SCOLOR=58><史诗水晶*1/SCOLOR=254><(放在背包即可自动使用)/SCOLOR=250>\\<极品装备可以在这里进行史诗锻造/SCOLOR=251>
+  UIDLG LimitItemSlot jiaoben018 item_001:5:10:11:15:19:24:22:64:62:51:53:200:202:204
+  UIDLG SetButtonGOTO jiaoben018 btn_001:@开始史诗锻造
+
+#SAY
+UICMD
+<开始史诗锻造/@开始史诗锻造>\
+BREAK
+
+
+
+[@开始史诗锻造]
+#IF
+  CheckItemSlot N$史诗锻造装备
+#ELSEACT
+  MessAgeBox <你还没有放入需要锻造的装备!/SCOLOR=58>
+BREAK
+
+#IF
+  CheckItem 史诗水晶 1
+#ELSEACT
+  MessAgeBox <你的身上没有史诗水晶!/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKNEWITEMVALUE 0 100 = 4 4 N$史诗锻造装备
+#ELSEACT
+  MessAgeBox <该装备不是极品品质，不能进行史诗锻造!/SCOLOR=58>
+BREAK
+
+#IF
+  random 20
+#ACT
+  TAKE 史诗水晶 1
+  UPGRADEITEMEX 0 100 0 1 0 4 N$史诗锻造装备 1 1
+  MessAgeBox <锻造成功!/SCOLOR=250>
+  SendNewLineMsg 0 251 0 0 0 0 0 恭喜玩家<[<$USERNAME>]/SCOLOR=254>成功锻造出史诗级装备！
+#ELSEACT
+  TAKE 史诗水晶 1
+  SendNewLineMsg 1 58 0 0 0 0 0 锻造失败！
+BREAK
+
+
+
+
+
+
+}

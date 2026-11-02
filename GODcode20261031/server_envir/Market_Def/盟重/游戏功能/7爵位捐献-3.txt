@@ -1,0 +1,299 @@
+[@MAIN]
+#IF
+#ACT
+  GOTO @JWJX
+BREAK
+
+
+[@JWJX]
+{
+#IF
+#ACT
+  #CALL [\任务配置\主线任务.txt] @任务7
+  CLIENTCMD HideIconEffects 爵位捐献 1
+
+#IF
+  equal N$爵位榜当前页 0
+#ACT
+  MOV N$爵位榜当前页 1
+
+#IF
+#ACT
+  MOV N$爵位榜总页签 10
+
+#IF
+  equal N$爵位榜当前页 1
+#ACT
+  MOV N$爵位榜行标 0
+
+#IF
+  equal N$爵位榜当前页 2
+#ACT
+  MOV N$爵位榜行标 10
+
+#IF
+  equal N$爵位榜当前页 3
+#ACT
+  MOV N$爵位榜行标 20
+
+#IF
+  equal N$爵位榜当前页 4
+#ACT
+  MOV N$爵位榜行标 30
+
+#IF
+  equal N$爵位榜当前页 5
+#ACT
+  MOV N$爵位榜行标 40
+
+#IF
+  equal N$爵位榜当前页 6
+#ACT
+  MOV N$爵位榜行标 50
+
+#IF
+  equal N$爵位榜当前页 7
+#ACT
+  MOV N$爵位榜行标 60
+
+#IF
+  equal N$爵位榜当前页 8
+#ACT
+  MOV N$爵位榜行标 70
+
+#IF
+  equal N$爵位榜当前页 9
+#ACT
+  MOV N$爵位榜行标 80
+
+#IF
+  equal N$爵位榜当前页 10
+#ACT
+  MOV N$爵位榜行标 90
+
+#IF
+  SMALL N$爵位榜行标 1
+  LARGE N$爵位榜行标 100
+#ACT
+  MOV N$爵位榜行标 0
+
+#IF
+#ACT
+  MOV S$爵位角色名1 虚位以待
+  MOV N$角色爵位1 0
+  MOV S$爵位角色名2 虚位以待
+  MOV N$角色爵位2 0
+  MOV S$爵位角色名3 虚位以待
+  MOV N$角色爵位3 0
+  MOV S$爵位角色名4 虚位以待
+  MOV N$角色爵位4 0
+  MOV S$爵位角色名5 虚位以待
+  MOV N$角色爵位5 0
+  MOV S$爵位角色名6 虚位以待
+  MOV N$角色爵位6 0
+  MOV S$爵位角色名7 虚位以待
+  MOV N$角色爵位7 0
+  MOV S$爵位角色名8 虚位以待
+  MOV N$角色爵位8 0
+  MOV S$爵位角色名9 虚位以待
+  MOV N$角色爵位9 0
+  MOV S$爵位角色名10 虚位以待
+  MOV N$角色爵位10 0
+
+  GetListStringEX ..\QuestDiary\游戏数据\爵位数据\爵位捐献1.txt <$USERNAME> N$个人捐献总金额
+  GetStringPos ..\QuestDiary\游戏数据\爵位数据\爵位捐献1.txt <$USERNAME>:<$STR(N$个人捐献总金额)> N$个人爵位捐献排名
+  INC N$个人爵位捐献排名 1
+
+
+  GetListString ..\QuestDiary\游戏数据\爵位数据\爵位捐献1.txt <$STR(N$爵位榜行标)> S$爵位角色名1 N$角色爵位1
+  INC N$爵位榜行标 1
+  GetListString ..\QuestDiary\游戏数据\爵位数据\爵位捐献1.txt <$STR(N$爵位榜行标)> S$爵位角色名2 N$角色爵位2
+  INC N$爵位榜行标 1
+  GetListString ..\QuestDiary\游戏数据\爵位数据\爵位捐献1.txt <$STR(N$爵位榜行标)> S$爵位角色名3 N$角色爵位3
+  INC N$爵位榜行标 1
+  GetListString ..\QuestDiary\游戏数据\爵位数据\爵位捐献1.txt <$STR(N$爵位榜行标)> S$爵位角色名4 N$角色爵位4
+  INC N$爵位榜行标 1
+  GetListString ..\QuestDiary\游戏数据\爵位数据\爵位捐献1.txt <$STR(N$爵位榜行标)> S$爵位角色名5 N$角色爵位5
+  INC N$爵位榜行标 1
+  GetListString ..\QuestDiary\游戏数据\爵位数据\爵位捐献1.txt <$STR(N$爵位榜行标)> S$爵位角色名6 N$角色爵位6
+  INC N$爵位榜行标 1
+  GetListString ..\QuestDiary\游戏数据\爵位数据\爵位捐献1.txt <$STR(N$爵位榜行标)> S$爵位角色名7 N$角色爵位7
+  INC N$爵位榜行标 1
+  GetListString ..\QuestDiary\游戏数据\爵位数据\爵位捐献1.txt <$STR(N$爵位榜行标)> S$爵位角色名8 N$角色爵位8
+  INC N$爵位榜行标 1
+  GetListString ..\QuestDiary\游戏数据\爵位数据\爵位捐献1.txt <$STR(N$爵位榜行标)> S$爵位角色名9 N$角色爵位9
+  INC N$爵位榜行标 1
+  GetListString ..\QuestDiary\游戏数据\爵位数据\爵位捐献1.txt <$STR(N$爵位榜行标)> S$爵位角色名10 N$角色爵位10
+
+#IF
+  LARGE N$个人爵位捐献排名 100
+#ACT
+  MOV S$个人爵位捐献排名1 未上榜
+#ELSEACT
+  MOV S$个人爵位捐献排名1 N$个人爵位捐献排名
+
+#IF
+#ACT
+  UIDLG Close ALL
+  UIDLG Open jiaoben010 400 150 0 0 1
+
+  UIDLG LockItemSlot jiaoben010 item_001:1
+  UIDLG SetItemSlot jiaoben010 item_001:注释
+  UIDLG ItemSlotTip jiaoben010 item_001:<第1-3名：/SCOLOR=254/6><天子/SCOLOR=251><　攻防+90点，破甲20%，生命值+900点/SCOLOR=250>\\<第4-8名：/SCOLOR=254/6><诸侯/SCOLOR=251><　攻防+60点，破甲12%，生命值+600点/SCOLOR=250>\\<第9-15名：/SCOLOR=254/6><元帅/SCOLOR=251><　攻防+40点，破甲8%，生命值+400点/SCOLOR=250>\\<第16-25名：/SCOLOR=254/6><伯爵/SCOLOR=251><　攻防+30点，破甲6%，生命值+300点/SCOLOR=250>\\<第26-50名：/SCOLOR=254/6><子爵/SCOLOR=251><　攻防+20点，破甲4%，生命值+200点/SCOLOR=250>\\<第51-100名：/SCOLOR=254/6><男爵/SCOLOR=251><　攻防+10点，破甲2%，生命值+100点/SCOLOR=250>\\
+  UIDLG SetRichText jiaoben010 WBK_001:<　　　<$STR(S$爵位角色名1)>/SCOLOR=168/17><<$STR(N$角色爵位1)>/SCOLOR=250><灵符/SCOLOR=251>
+  UIDLG SetRichText jiaoben010 WBK_002:<　　　<$STR(S$爵位角色名2)>/SCOLOR=168/17><<$STR(N$角色爵位2)>/SCOLOR=250><灵符/SCOLOR=251>
+  UIDLG SetRichText jiaoben010 WBK_003:<　　　<$STR(S$爵位角色名3)>/SCOLOR=168/17><<$STR(N$角色爵位3)>/SCOLOR=250><灵符/SCOLOR=251>
+  UIDLG SetRichText jiaoben010 WBK_004:<　　　<$STR(S$爵位角色名4)>/SCOLOR=168/17><<$STR(N$角色爵位4)>/SCOLOR=250><灵符/SCOLOR=251>
+  UIDLG SetRichText jiaoben010 WBK_005:<　　　<$STR(S$爵位角色名5)>/SCOLOR=168/17><<$STR(N$角色爵位5)>/SCOLOR=250><灵符/SCOLOR=251>
+  UIDLG SetRichText jiaoben010 WBK_006:<　　　<$STR(S$爵位角色名6)>/SCOLOR=168/17><<$STR(N$角色爵位6)>/SCOLOR=250><灵符/SCOLOR=251>
+  UIDLG SetRichText jiaoben010 WBK_007:<　　　<$STR(S$爵位角色名7)>/SCOLOR=168/17><<$STR(N$角色爵位7)>/SCOLOR=250><灵符/SCOLOR=251>
+  UIDLG SetRichText jiaoben010 WBK_008:<　　　<$STR(S$爵位角色名8)>/SCOLOR=168/17><<$STR(N$角色爵位8)>/SCOLOR=250><灵符/SCOLOR=251>
+  UIDLG SetRichText jiaoben010 WBK_009:<　　　<$STR(S$爵位角色名9)>/SCOLOR=168/17><<$STR(N$角色爵位9)>/SCOLOR=250><灵符/SCOLOR=251>
+  UIDLG SetRichText jiaoben010 WBK_010:<　　　<$STR(S$爵位角色名10)>/SCOLOR=168/17><<$STR(N$角色爵位10)>/SCOLOR=250><灵符/SCOLOR=251>
+  UIDLG SetRichText jiaoben010 WBK_011:<当前捐献金额：/SCOLOR=254><<$STR(N$个人捐献总金额)>/SCOLOR=250><灵符/SCOLOR=251>\\<当前捐献排名：/SCOLOR=254><第/SCOLOR=251><<$STR(S$个人爵位捐献排名1)>/SCOLOR=250><名/SCOLOR=251>
+  UIDLG SetButtonGOTO jiaoben010 btn_001:@爵位上一页
+  UIDLG SetButtonGOTO jiaoben010 btn_002:@爵位下一页
+  UIDLG SetButtonGOTO jiaoben010 btn_003:@@InPutInteger1
+
+#SAY
+  UICMD
+  <爵位上一页/@爵位上一页>\
+  <爵位下一页/@爵位下一页>\
+  <爵位捐献/@@InPutInteger1>\
+BREAK
+
+[@爵位下一页]
+#IF
+  SMALL N$爵位榜当前页 N$爵位榜总页签
+#ACT
+  INC N$爵位榜当前页 1
+  GOTO @MAIN
+#ELSEACT
+  MessAgeBox <已经是最后一页！/SCOLOR=58>
+BREAK
+
+[@爵位上一页]
+#IF
+  LARGE N$爵位榜当前页 1
+#ACT
+  DEC N$爵位榜当前页 1
+  GOTO @MAIN
+#ELSEACT
+  MessAgeBox <已经是第一页！/SCOLOR=58>
+BREAK
+
+[@InPutInteger1]
+#IF
+  CHECKGAMEGIRD > <$STR(N1)>
+#ACT
+  GAMEGIRD - <$STR(N1)>
+  CALCVAR HUMAN N$点击捐献金额 + <$STR(N1)>
+  SAVEVAR HUMAN N$点击捐献金额 ..\QuestDiary\游戏数据\爵位数据\爵位捐献.txt
+  MessAgeBox <您成功捐献了/SCOLOR=254><<$STR(N1)>/SCOLOR=58><灵符！/SCOLOR=254>
+  SortHumVarToListEx N$点击捐献金额  ..\QuestDiary\游戏数据\爵位数据\爵位捐献.txt 1 ..\QuestDiary\游戏数据\爵位数据\爵位捐献1.txt 1
+  GOTO @MAIN
+#ELSEACT
+  MessAgeBox <你没有这么多灵符！/SCOLOR=58>
+BREAK
+
+
+[@爵位称号配置]
+#IF
+#ACT
+  GetListStringEX ..\QuestDiary\游戏数据\爵位数据\爵位捐献1.txt <$USERNAME> N$个人捐献总金额
+  GetStringPos ..\QuestDiary\游戏数据\爵位数据\爵位捐献1.txt <$USERNAME>:<$STR(N$个人捐献总金额)> N$个人爵位捐献排名
+  INC N$个人爵位捐献排名 1
+
+
+#IF
+  LARGE N$个人爵位捐献排名 0
+  SMALL N$个人爵位捐献排名 4
+  NOT CHECKFENGHAO 王
+#ACT
+  RECYCFENGHAO SELF 王
+  RECYCFENGHAO SELF 公
+  RECYCFENGHAO SELF 候
+  RECYCFENGHAO SELF 伯
+  RECYCFENGHAO SELF 子
+  RECYCFENGHAO SELF 男
+  GIVEFENGHAO SELF 王
+BREAK
+
+#IF
+  LARGE N$个人爵位捐献排名 3
+  SMALL N$个人爵位捐献排名 9
+  NOT CHECKFENGHAO 公
+#ACT
+  RECYCFENGHAO SELF 王
+  RECYCFENGHAO SELF 公
+  RECYCFENGHAO SELF 候
+  RECYCFENGHAO SELF 伯
+  RECYCFENGHAO SELF 子
+  RECYCFENGHAO SELF 男
+  GIVEFENGHAO SELF 公
+BREAK
+
+#IF
+  LARGE N$个人爵位捐献排名 8
+  SMALL N$个人爵位捐献排名 16
+  NOT CHECKFENGHAO 候
+#ACT
+  RECYCFENGHAO SELF 王
+  RECYCFENGHAO SELF 公
+  RECYCFENGHAO SELF 候
+  RECYCFENGHAO SELF 伯
+  RECYCFENGHAO SELF 子
+  RECYCFENGHAO SELF 男
+  GIVEFENGHAO SELF 候
+BREAK
+
+#IF
+  LARGE N$个人爵位捐献排名 15
+  SMALL N$个人爵位捐献排名 26
+  NOT CHECKFENGHAO 伯
+#ACT
+  RECYCFENGHAO SELF 王
+  RECYCFENGHAO SELF 公
+  RECYCFENGHAO SELF 候
+  RECYCFENGHAO SELF 伯
+  RECYCFENGHAO SELF 子
+  RECYCFENGHAO SELF 男
+  GIVEFENGHAO SELF 伯
+BREAK
+
+#IF
+  LARGE N$个人爵位捐献排名 25
+  SMALL N$个人爵位捐献排名 51
+  NOT CHECKFENGHAO 子
+#ACT
+  RECYCFENGHAO SELF 王
+  RECYCFENGHAO SELF 公
+  RECYCFENGHAO SELF 候
+  RECYCFENGHAO SELF 伯
+  RECYCFENGHAO SELF 子
+  RECYCFENGHAO SELF 男
+  GIVEFENGHAO SELF 子
+BREAK
+
+#IF
+  LARGE N$个人爵位捐献排名 50
+  SMALL N$个人爵位捐献排名 101
+  NOT CHECKFENGHAO 男
+#ACT
+  RECYCFENGHAO SELF 王
+  RECYCFENGHAO SELF 公
+  RECYCFENGHAO SELF 候
+  RECYCFENGHAO SELF 伯
+  RECYCFENGHAO SELF 子
+  RECYCFENGHAO SELF 男
+  GIVEFENGHAO SELF 男
+BREAK
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,47 @@
+[@MAIN]
+;<Img:24:Hum.wil:1:1/@图片点击1>
+;<ImgEx:Hum.wil:80:96:66:60:-60/@图片点击2>
+;<PlayImg:Hum.wil:96:24:100:120:-120/@图片点击3>
+;<PlayImgEx:Hum.wil:96:24:100:3:180:-180/@图片点击4>
+
+<测试测试/@测试测试>\
+<测试测试1/@@InPutInteger10>\
+
+
+[@InPutInteger10]
+#IF
+  CHECKGAMEGIRD > <$STR(N10)>
+#ACT
+  GAMEGIRD - <$STR(N10)>
+  CALCVAR HUMAN N$测试变量 + <$STR(N10)>
+  SAVEVAR HUMAN N$测试变量 ..\QuestDiary\游戏数据\爵位数据\测试.txt
+  SendMsg 7 捐献成功
+
+
+[@测试测试]
+#IF
+#ACT
+LOADVAR HUMAN N$测试变量 ..\QuestDiary\游戏数据\爵位数据\测试.txt
+
+
+#IF
+  LARGE N$测试变量 2399999
+#ACT
+  SendMsg 7 检测成功，当前捐献金额<$STR(N$测试变量)>
+#ELSEACT
+  SendMsg 7 检测失败，当前捐献金额<$STR(N$测试变量)>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

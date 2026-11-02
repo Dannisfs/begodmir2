@@ -1,0 +1,176 @@
+[@MAIN]
+#IF
+#ACT
+  GOTO @ZZTQ
+BREAK
+
+[@ZZTQ]
+{
+#IF
+#ACT
+  #CALL [\任务配置\主线任务.txt] @任务5
+  CLIENTCMD HideIconEffects 至尊特权 1
+
+#IF
+  equal U3 0
+#ACT
+  MOV S$当前特权 无特权
+  MOV N$特权攻击 0
+  MOV N$特权防御 0
+  MOV N$特权生命 0
+  MOV N$特权爆率 0
+  MOV N$下一级费用 1888
+  MOV N$下一级等级 1
+
+#IF
+  equal U3 1
+#ACT
+  MOV S$当前特权 黑铁特权
+  MOV N$特权攻击 20
+  MOV N$特权防御 20
+  MOV N$特权生命 200
+  MOV N$特权爆率 5
+  MOV N$下一级费用 2888
+  MOV N$下一级等级 2
+
+#IF
+  equal U3 2
+#ACT
+  MOV S$当前特权 青铜特权
+  MOV N$特权攻击 40
+  MOV N$特权防御 40
+  MOV N$特权生命 400
+  MOV N$特权爆率 10
+  MOV N$下一级费用 3888
+  MOV N$下一级等级 3
+
+#IF
+  equal U3 3
+#ACT
+  MOV S$当前特权 白银特权
+  MOV N$特权攻击 60
+  MOV N$特权防御 60
+  MOV N$特权生命 600
+  MOV N$特权爆率 15
+  MOV N$下一级费用 4888
+  MOV N$下一级等级 4
+
+#IF
+  equal U3 4
+#ACT
+  MOV S$当前特权 黄金特权
+  MOV N$特权攻击 80
+  MOV N$特权防御 80
+  MOV N$特权生命 800
+  MOV N$特权爆率 20
+  MOV N$下一级费用 5888
+  MOV N$下一级等级 5
+
+#IF
+  equal U3 5
+#ACT
+  MOV S$当前特权 铂金特权
+  MOV N$特权攻击 100
+  MOV N$特权防御 100
+  MOV N$特权生命 1000
+  MOV N$特权爆率 25
+  MOV N$下一级费用 6888
+  MOV N$下一级等级 6
+
+#IF
+  equal U3 6
+#ACT
+  MOV S$当前特权 钻石特权
+  MOV N$特权攻击 130
+  MOV N$特权防御 130
+  MOV N$特权生命 1300
+  MOV N$特权爆率 30
+  MOV N$下一级费用 7888
+  MOV N$下一级等级 7
+
+#IF
+  equal U3 7
+#ACT
+  MOV S$当前特权 天王特权
+  MOV N$特权攻击 150
+  MOV N$特权防御 150
+  MOV N$特权生命 1500
+  MOV N$特权爆率 40
+  MOV N$下一级费用 18888
+  MOV N$下一级等级 8
+
+#IF
+  equal U3 8
+#ACT
+  MOV S$当前特权 至尊特权
+  MOV N$特权攻击 200
+  MOV N$特权防御 200
+  MOV N$特权生命 2000
+  MOV N$特权爆率 50
+  MOV N$下一级费用 28888
+
+
+#IF
+#ACT
+  UIDLG Close ALL
+  UIDLG Open jiaoben015 400 150 0 0 1
+  UIDLG SetRichText jiaoben015 WBK_001:<　　　　　　开通特权能够助你在游戏中快速起步/SCOLOR=58>\\　\\<　　　　　　　　　　当前特权：/SCOLOR=251><<$STR(S$当前特权)>/SCOLOR=250>\\　\\<　　　　　　　　　　　特权附加　↓/SCOLOR=254>\\<　　　　　　　　　　　　攻击：/SCOLOR=250><<$STR(N$特权攻击)>/SCOLOR=250>\\<　　　　　　　　　　　　防御：/SCOLOR=250><<$STR(N$特权防御)>/SCOLOR=250>\\<　　　　　　　　　　　　生命：/SCOLOR=250><<$STR(N$特权生命)>/SCOLOR=250>\\<　　　　　　　　　　　　爆率：/SCOLOR=250><<$STR(N$特权爆率)>%/SCOLOR=250>
+  UIDLG SetRichText jiaoben015 WBK_002:<　　　　　　<$STR(N$下一级费用)>/SCOLOR=58><灵符/SCOLOR=251>
+  UIDLG SetButtonGOTO jiaoben015 btn_001:@点击升级特权
+#SAY
+  UICMD
+  <点击升级特权/@点击升级特权>\
+BREAK
+
+
+[@点击升级特权]
+#IF
+  LARGE U3 7
+#ACT
+  MessAgeBox <你的特权已经是最高级的了！/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKGAMEGIRD < <$STR(N$下一级费用)>
+#ACT
+  MessAgeBox <你当前的灵符不足以支付！/SCOLOR=58>
+BREAK
+
+#IF
+#ACT
+  GAMEGIRD - <$STR(N$下一级费用)>
+  RECYCFENGHAO SELF V1
+  RECYCFENGHAO SELF V2
+  RECYCFENGHAO SELF V3
+  RECYCFENGHAO SELF V4
+  RECYCFENGHAO SELF V5
+  RECYCFENGHAO SELF V6
+  RECYCFENGHAO SELF V7
+  RECYCFENGHAO SELF V8
+  GIVEFENGHAO SELF V<$STR(N$下一级等级)>
+  INC U3 1
+  MessAgeBox <恭喜您升级特权成功！/SCOLOR=58>
+  GOTO @MAIN
+BREAK
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="MainUI5" Type="Plist" ID="6864771a-4fb5-4111-b8f1-198ebf1198db" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="1" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <MaxSize Width="2048" Height="2048" />
+  </Content>
+</PlistInfoProjectFile>

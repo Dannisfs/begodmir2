@@ -1,0 +1,97 @@
+[@MAIN]
+#IF
+#ACT
+  GOTO @SCJX
+BREAK
+
+
+[@SCJX]
+{
+#IF
+#ACT
+  #CALL [\任务配置\主线任务.txt] @任务8
+  CLIENTCMD HideIconEffects 沙城捐献 1
+
+#IF
+  CheckContainsText <$SERVERNAME> 一区
+#ACT
+  MOV S$区服编号 一区
+
+#IF
+  CheckContainsText <$SERVERNAME> 二区
+#ACT
+  MOV S$区服编号 二区
+
+#IF
+  CheckContainsText <$SERVERNAME> 三区
+#ACT
+  MOV S$区服编号 三区
+
+#IF
+  CheckContainsText <$SERVERNAME> 合区
+#ACT
+  MOV S$区服编号 合区
+
+#IF
+#ACT
+  MOV N$今日一区捐献 0
+  MOV N$今日二区捐献 0
+  MOV N$今日三区捐献 0
+  MOV N$今日捐献总额 0
+  GetListStringEX D:\通区捐献\<$STR(A1)>\<$STR(A1)>一区.txt <$STR(A1)>一区 N$今日一区捐献
+  GetListStringEX D:\通区捐献\<$STR(A1)>\<$STR(A1)>二区.txt <$STR(A1)>二区 N$今日二区捐献
+  GetListStringEX D:\通区捐献\<$STR(A1)>\<$STR(A1)>三区.txt <$STR(A1)>三区 N$今日三区捐献
+  INC N$今日捐献总额 N$今日一区捐献
+  INC N$今日捐献总额 N$今日二区捐献
+  INC N$今日捐献总额 N$今日三区捐献
+  DIV N$今日捐献总额1 N$今日捐献总额 100
+  MUL N$胜利方金额 N$今日捐献总额1 50
+  MUL N$失败方金额 N$今日捐献总额1 20
+
+
+#IF
+#ACT
+  UIDLG Close ALL
+  UIDLG Open jiaoben011 400 150 0 0 1
+  UIDLG SetRichText jiaoben011 WBK_001:<　　　沙捐需要3888灵符/SCOLOR=58>\\<每天3个新区，第二天合区，合区当晚8点开始首沙，普沙时间为合区后每周246/SCOLOR=251>\\　\\<　开启沙捐之后获得沙捐称号/SCOLOR=251>\\<　　　　　附加属性：/SCOLOR=254>\\<　　　　　攻防血20%/SCOLOR=250>\\<　　　刀刀切割怪物100点/SCOLOR=250>\\　\\<　攻沙胜利方奖励捐献总额50%/SCOLOR=251>\\<　失败方均分捐献奖励总额20%/SCOLOR=251>
+  UIDLG SetRichText jiaoben011 WBK_002:<　今日一区捐献：/SCOLOR=254><<$STR(N$今日一区捐献)>/SCOLOR=250><灵符/SCOLOR=254>\\<　今日二区捐献：/SCOLOR=254><<$STR(N$今日二区捐献)>/SCOLOR=250><灵符/SCOLOR=254>\\<　今日三区捐献：/SCOLOR=254><<$STR(N$今日三区捐献)>/SCOLOR=250><灵符/SCOLOR=254>\\　\\<　当前胜利方奖池：/SCOLOR=251><<$STR(N$胜利方金额)>/SCOLOR=250><灵符/SCOLOR=251>\\<　当前失败方奖池：/SCOLOR=251><<$STR(N$失败方金额)>/SCOLOR=250><灵符/SCOLOR=251>
+  UIDLG SetButtonGOTO jiaoben011 btn_001:@点击沙捐
+#SAY
+  UICMD
+  <点击沙捐/@点击沙捐>\
+BREAK
+
+[@点击沙捐]
+#IF
+  LARGE U2 0
+#ACT
+  MessAgeBox <你已经捐献过了！/SCOLOR=58>
+BREAK
+
+#IF
+  CHECKFENGHAO 沙城捐献
+#ACT
+  MessAgeBox <你已经捐献过了！/SCOLOR=58>
+BREAK
+
+
+#IF
+  CHECKGAMEGIRD < 3888
+#ACT
+  MessAgeBox <你当前的灵符不足以支付！/SCOLOR=58>
+BREAK
+
+
+#IF
+#ACT
+  GAMEGIRD - 3888
+  INC G1 3888
+  MOV U2 1
+  GIVEFENGHAO SELF 沙城捐献
+  CLEARNAMELIST D:\通区捐献\<$STR(A1)>\<$STR(A1)><$STR(S$区服编号)>.txt
+  AddTextListEx D:\通区捐献\<$STR(A1)>\<$STR(A1)><$STR(S$区服编号)>.txt <$STR(A1)><$STR(S$区服编号)>:<$STR(G1)>
+  MessAgeBox <恭喜你成功开启沙捐！/SCOLOR=58>
+  GOTO @MAIN
+BREAK
+
+}

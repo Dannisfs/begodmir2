@@ -1,0 +1,5 @@
+[@MAIN]
+#IF
+#ACT
+  #CALL [\Market_Def\盟重\游戏功能\2装备宝石-3.txt] @BSXT
+BREAK

@@ -1,0 +1,98 @@
+[@MAIN]
+#IF
+  equal T1 
+#ACT
+#SAY
+<…………………………………………………………………/SCOLOR=13>\
+　　　　　　　　<二级密码/SCOLOR=253>    \
+<…………………………………………………………………/SCOLOR=13>\
+<玩家设置二级密码之后才能正常游戏!/SCOLOR=254>\
+<二级密码由4-8个中文字符组成!/SCOLOR=254>\
+<…………………………………………………………………/SCOLOR=13>\
+<　　二级密码:/SCOLOR=250><<$STR(S1)>/SCOLOR=58/8><点击输入/@@InPutString1>\
+<…………………………………………………………………/SCOLOR=13>\
+<确认二级密码:/SCOLOR=250><<$STR(S2)>/SCOLOR=58/8><点击输入/@@InPutString2>\
+<…………………………………………………………………/SCOLOR=13>\
+　　　　　　　　　　　<确认设置二级密码/@确认设置二级密码>\
+<…………………………………………………………………/SCOLOR=13>\
+#ELSESAY
+<…………………………………………………………………/SCOLOR=13>\
+　　　　　　　　<二级密码/SCOLOR=253>    \
+<…………………………………………………………………/SCOLOR=13>\
+<级已经设置过二级密码!/SCOLOR=254>\
+<如果忘记二级密码，请联系客服协助找回!/SCOLOR=254>\
+<…………………………………………………………………/SCOLOR=13>\
+<…………………………………………………………………/SCOLOR=13>\
+
+
+[@InPutString1]
+#IF
+  CheckStringlength <$STR(S1)> < 8
+#ACT
+  MOV S1  
+  messagebox 错误：你输入的二级密码太短!
+  GOTO @MAIN
+break
+
+#IF
+  CheckStringlength <$STR(S1)> > 16
+#ACT
+  MOV S1  
+  messagebox 错误：你输入的二级密码太长!
+  GOTO @MAIN
+break
+
+#IF
+#ACT
+  goto @MAIN
+break
+
+
+[@InPutString2]
+#IF
+  CheckStringlength <$STR(S2)> < 8
+#ACT
+  MOV S2  
+  messagebox 错误：你输入的二级密码太短!
+  GOTO @MAIN
+break
+
+#IF
+  CheckStringlength <$STR(S2)> > 16
+#ACT
+  MOV S2  
+  messagebox 错误：你输入的二级密码太长!
+  GOTO @MAIN
+break
+
+#IF
+#ACT
+  goto @MAIN
+break
+
+[@确认设置二级密码]
+#IF
+  equal S1 
+#ACT
+  messagebox 错误：你输入的二级密码长度不对!
+break
+
+#IF
+  equal S2 
+#ACT
+  messagebox 错误：你输入的二级密码长度不对!
+break
+
+#IF
+  CompareText <$STR(S1)> <$STR(S2)>
+#ELSEACT
+  messagebox 两次输入的二级密码不一致,请重新输入!
+  goto @MAIN
+break
+
+#IF
+#ACT
+  MOV T1 S2
+  messagebox 二级密码设置成功!请牢记您的二级密码为:<<$STR(T1)>/SCOLOR=250>
+  Close
+break

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config VER="1.0">
+<!--基础操作类-->
+<!--alginX 相对于窗口水平对齐方式0左对齐1右对齐2中心对齐 默认0-->
+<!--alginY 相对于窗口垂直对齐方式0下对齐1上对齐2中心对齐 默认0-->
+    <Button name="普攻" type="1" mapOrder="1" buttonType="99" magicID="-1" iconPath="icon/pugong.png" x="195" y="45" alginX="1" background="0" index="-1" isHide="1"/>
+	<Button name="攻击人物" type="1" mapOrder="2" buttonType="135" magicID="-1" iconPath="icon/gongjiguaiwu.png" x="100" y="140" alginX="1" background="0" index="-1" isHide="1"/>
+	<Button name="攻击怪物" type="1" mapOrder="3" buttonType="136" magicID="-1" iconPath="icon/gongjirenwu.png" x="218" y="6" alginX="1" background="0" index="-1" isHide="1"/>
+    <Button name="背包" type="1" mapOrder="4" buttonType="100" magicID="-1" iconPath="icon/beibao.png" x="70" y="130" background="0" index="-1" isHide="1"/>
+	<Button name="角色" type="1" mapOrder="5" buttonType="101" magicID="-1" iconPath="icon/juese.png" x="70" y="200" background="0" index="-1" isHide="1"/>
+	<Button name="属下" type="1" mapOrder="13" buttonType="112" magicID="-1" iconPath="icon/xiashu.png" x="-220" y="424" background="2" index="-1" isHide="1"/>
+	<Button name="弹幕" type="1" mapOrder="13" buttonType="300" magicID="-1" iconPath="chaoUI/1340059.png" x="270" y="0" alginX="2" background="2" index="-1" isHide="1" script="FDM.txt"/>
+	<Button name="强攻" type="1" mapOrder="13" buttonType="302" magicID="-1" iconPath="icon/qianggong.png" x="70" y="15" alginX="1" background="2" index="-1" isHide="1"/>
+
+<!--常规菜单类-->
+	<Button name="商城" type="1" mapOrder="6" buttonType="108" magicID="-1" iconPath="icon/shangchengx.png" x="160" y="22" alginX="2" background="2" index="-1" isHide="1"/>
+	<Button name="排行榜" type="1" mapOrder="7" buttonType="126" magicID="-1" iconPath="icon/paihangbang.png" x="0" y="340" background="2" index="-1" isHide="1"/>
+	<Button name="组队" type="1" mapOrder="8" buttonType="104" magicID="-1" iconPath="icon/zudui.png" x="0" y="270" background="2" index="-1" isHide="1"/>
+	<Button name="行会" type="1" mapOrder="9" buttonType="103" magicID="-1" iconPath="icon/hanghui.png" x="0" y="200" background="2" index="-1" isHide="1"/>
+	<Button name="摆摊" type="1" mapOrder="13" buttonType="106" magicID="-1" iconPath="icon/baitan.png" x="0" y="130" background="2" index="-1" isHide="1"/>
+	<Button name="交易" type="1" mapOrder="14" buttonType="105" magicID="-1" iconPath="icon/jiaoyi.png" x="0" y="60" background="2" index="-1" isHide="1"/>
+	<Button name="生肖" type="1" mapOrder="14" buttonType="301" magicID="-1" iconPath="icon/shengxiao.png" x="70" y="60" background="2" index="-1" isHide="1" script="shengxiao.txt"/>
+
+<!--设置类-->
+	<Button name="设置" type="1" mapOrder="15" buttonType="109" magicID="-1" iconPath="icon/shezhi.png" x="235" y="500" alginX="1" background="0" index="-1" isHide="1"/>
+	<Button name="布局" type="1" mapOrder="16" buttonType="110" magicID="-1" iconPath="buju_btn.png" x="235" y="640" alginX="1" background="0" index="-1" isHide="1"/>
+	<Button name="小退" type="1" mapOrder="17" buttonType="113" magicID="-1" iconPath="tuichu.png" x="235" y="570" alginX="1" background="0" index="-1" isHide="1"/>
+	<Button name="挂机" type="1" mapOrder="12" buttonType="114" magicID="-1" iconPath="icon/guaji.png" x="80" y="430" alginX="1" background="2" index="-1" isHide="1"/>
+
+<!--活动类-->
+	<Button name="VIP" type="1" mapOrder="10" buttonType="200" magicID="-1" iconPath="icon/VIP.png" x="80" y="619" background="2" index="-1" isHide="1" script="VIP.txt"/>
+<!--	<Button name="充值赠礼" type="1" mapOrder="11" buttonType="201" magicID="-1" iconPath="icon/chongzhizengli.png" x="160" y="650" background="2" index="-1" isHide="1" script="CZLB.txt"/>-->
+	<Button name="专属福利" type="1" mapOrder="26" buttonType="202" magicID="-1" iconPath="icon/zhuanshufuli.png" x="160" y="619" background="2" index="-1" isHide="1" script="MFFL.txt"/>
+	<Button name="神战之力" type="1" mapOrder="26" buttonType="205" magicID="-1" iconPath="icon/shenzhanzhili.png" x="240" y="619" background="2" index="-1" isHide="1" script="KBZL.txt"/>
+	<Button name="爵位" type="1" mapOrder="26" buttonType="206" magicID="-1" iconPath="icon/juewei.png" x="320" y="619" background="2" index="-1" isHide="1" script="JEJX.txt"/>
+	<Button name="活动" type="1" mapOrder="26" buttonType="207" magicID="-1" iconPath="icon/huodongdt.png" x="400" y="619" background="2" index="-1" isHide="1" script="JCHD.txt"/>
+	<Button name="回收" type="1" mapOrder="26" buttonType="208" magicID="-1" iconPath="icon/huishou.png" x="480" y="619" background="2" index="-1" isHide="1" script="ZBHS.txt"/>
+
+    <Button name="快捷栏1" type="2" mapOrder="18" buttonType="129" magicID="-1" iconPath="icon/kuaijielan.png" x="115" y="95" alginX="2" background="0" index="-1" isHide="1" itemName=""/>
+    <Button name="快捷栏2" type="2" mapOrder="19" buttonType="130" magicID="-1" iconPath="icon/kuaijielan.png" x="55" y="95" alginX="2" background="0" index="-1" isHide="1" itemName=""/>
+    <Button name="快捷栏3" type="2" mapOrder="20" buttonType="131" magicID="-1" iconPath="icon/kuaijielan.png" x="-5" y="95" alginX="2" background="0" index="-1" isHide="1" itemName=""/>
+    <Button name="快捷栏4" type="2" mapOrder="21" buttonType="132" magicID="-1" iconPath="icon/kuaijielan.png" x="-65" y="95" alginX="2" background="0" index="-1" isHide="1" itemName=""/>
+    <Button name="快捷栏5" type="2" mapOrder="22" buttonType="133" magicID="-1" iconPath="icon/kuaijielan.png" x="-125" y="95" alginX="2" background="0" index="-1" isHide="1" itemName=""/>
+    <Button name="快捷栏6" type="2" mapOrder="23" buttonType="134" magicID="-1" iconPath="icon/kuaijielan.png" x="-185" y="95" alginX="2" background="0" index="-1" isHide="1" itemName=""/>
+
+    <Button name="常规菜单类收纳按钮1" type="1" mapOrder="24" buttonType="203" magicID="-1" iconPath="icon/style_switch_1.png" x="0" y="0" background="0" index="-1" isHide="1" toggle="排行榜|组队|行会|摆摊|交易|生肖|背包|角色"/>
+	<Button name="活动类收纳按钮1" type="1" mapOrder="25" buttonType="204" magicID="-1" iconPath="icon/huodong.png" x="0" y="637" background="0" index="-1" isHide="1" toggle="VIP|充值赠礼|专属福利|神战之力|爵位|活动|回收"/>
+
+<!--	<Button name="拾取" type="1" mapOrder="25" buttonType="209" magicID="-1" iconPath="icon/main_shiqu.png" x="200" y="600" background="0" index="-1" isHide="1"/>-->
+
+
+
+
+
+
+
+
+
+	<!--<Button name="技能" type="1" mapOrder="6" buttonType="102" magicID="-1" iconPath="icon/jineng.png" x="380" y="160" background="2" index="-1" isHide="0"/>-->
+	<!--Button name="好友" type="1" mapOrder="9" buttonType="107" magicID="-1" iconPath="icon/haoyou.png" x="780" y="160" background="1" index="-1" isHide="0"/-->
+	<!--Button name="属下" type="1" mapOrder="13" buttonType="112" magicID="-1" iconPath="shuxia.png" x="0" y="500" background="0" index="-1" isHide="1"/-->
+<!--	<Button name="红药" type="2" mapOrder="14" buttonType="115" magicID="-1" iconPath="icon/hongyao.png" x="0" y="228" background="1" index="-1" isHide="1"/>
+	<Button name="蓝药" type="2" mapOrder="15" buttonType="116" magicID="-1" iconPath="icon/lanyao.png" x="0" y="308" background="1" index="-1" isHide="1"/>
+	<Button name="大药" type="2" mapOrder="16" buttonType="117" magicID="-1" iconPath="icon/dayao.png" x="0" y="388" background="1" index="-1" isHide="1"/>
+	<Button name="随机" type="2" mapOrder="17" buttonType="118" magicID="-1" iconPath="icon/suiji.png" x="0" y="468" background="1" index="-1" isHide="1"/>
+	<Button name="回城" type="2" mapOrder="18" buttonType="119" magicID="-1" iconPath="icon/huicheng.png" x="0" y="548" background="1" index="-1" isHide="1"/>
+	<Button name="地牢" type="2" mapOrder="19" buttonType="121" magicID="-1" iconPath="icon/dilao.png" x="1000" y="460" background="1" index="-1" isHide="0"/>
+	<Button name="行会" type="2" mapOrder="20" buttonType="122" magicID="-1" iconPath="icon/hanghui0.png" x="1000" y="460" background="1" index="-1" isHide="0"/>-->
+<!--快捷栏 可以从背包拖动数据库类别0 2 3 的物品放上去 也可以拖回背包 点击一次相当于背包里面的双击使用   位置绑定聊天窗-->
+
+
+	<!--Button name="召唤英雄" type="1" mapOrder="24" buttonType="127" magicID="-1" iconPath="icon/zhaohuanyingxiong.png" x="1000" y="460" background="1" index="-1" isHide="0"/-->
+	<!--Button name="收回英雄" type="1" mapOrder="25" buttonType="128" magicID="-1" iconPath="icon/shouhuiyingxiong.png" x="1000" y="460" background="1" index="-1" isHide="0"/-->
+	<!--Button name="英雄属性" type="1" mapOrder="26" buttonType="129" magicID="-1" iconPath="icon/yingxiong.png" x="1000" y="460" background="1" index="-1" isHide="0"/-->
+	<!--Button name="英雄背包" type="1" mapOrder="27" buttonType="130" magicID="-1" iconPath="icon/yingxiongbaoguo.png" x="1000" y="460" background="1" index="-1" isHide="0"/-->
+	<!--Button name="英雄模式" type="1" mapOrder="28" buttonType="131" magicID="-1" iconPath="icon/yingxiongmoshi.png" x="1000" y="460" background="1" index="-1" isHide="0"/-->
+	<!--Button name="合击" type="1" mapOrder="29" buttonType="132" magicID="-1" iconPath="icon/heji.png" x="1000" y="460" background="1" index="-1" isHide="0"/-->
+</Config>

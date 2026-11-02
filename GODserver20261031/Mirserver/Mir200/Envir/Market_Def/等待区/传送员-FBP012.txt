@@ -1,0 +1,44 @@
+[@MAIN]
+<下一层/@下一层>
+
+
+
+[@下一层]
+
+#IF
+  CHECKMAPMOBCOUNT SELF 169 180 狐族战士[精英] > 1 150
+#ACT
+  CLOSEECTYPE
+  MAPMOVE 3 333 333
+  CREATEECTYPE FBP014 30 0
+  MOVEECTYPE FBP014 20 253
+  SendNewLineMsg 1 253 0 0 0 0 0 怪物小于1进入！
+  UIDLG Close jiaoben017
+#ELSEACT
+  CLOSEECTYPE
+  MAPMOVE 3 333 333
+  CREATEECTYPE FBP014 30 0
+  MOVEECTYPE FBP014 20 253
+  SendNewLineMsg 1 253 0 0 0 0 0 怪物大于1进入！
+  UIDLG Close jiaoben017
+BREAK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

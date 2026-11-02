@@ -1,0 +1,59 @@
+
+god三端引擎  win   搭建教程
+
+测试系统：windows server 2012
+
+1.解压服务端到D盘根目录：
+
+
+D:\GODserver
+
+
+注意：只能放到D盘放到其他盘符需要改动很多东西
+
+
+2.进入环境文件夹安装常用环境
+
+1.安装常用运行库合集
+
+2.安装N++
+
+
+
+
+3.修改服务端文件IP配置   替换106.55.254.14为自己服务器IP
+
+D:\phpStudy\WWW\edition.xml
+
+D:\phpStudy\WWW\VER1\ServerList.txt
+
+D:\GODserver\Mirserver\Config.ini
+
+
+
+
+4.启动游戏：
+
+
+第一步:【[1]phpStudye】【打开之后，点击（启动Apache和MySQL5.5.29），正常为2个绿灯，如果出现红灯，请百度搜索解决办法。】
+
+
+第二步：【[2]GameCenter】【点启动】
+
+
+第三步：【[3]Gateway4.3】【启动之后，耐心等待1-5秒即可，游戏启动完成。】
+
+
+
+
+
+5.客户端修改：
+
+
+PC修改文件
+\assets\res\config\accountpassword.xml   内IP
+
+安卓修改文件
+三职业安卓客户端.apk\assets\res\config\accountpassword.xml   内IP
+
+==================================================================

@@ -1,0 +1,10 @@
+config/accountpassword.xml,258b676f
+config/buttonConfig.xml,000f3d41
+config/GoodsConfig.csv,abc03080
+config/monster_action.csv,2518d141
+config/monster_action_tpl.csv,3ab937fd
+config/name1.csv,943795ae
+config/name2.csv,da7993f6
+config/SetUpConfig.xml,41672111
+config/uiDisplayConfig.xml,67ddc0da
+config/WeaponSound.csv,d863ab4d

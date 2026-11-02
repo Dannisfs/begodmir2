@@ -1,0 +1,203 @@
+[@MAIN]
+#IF
+#ACT
+  GOTO @ZLXT
+BREAK
+
+
+[@ZLXT]
+{
+#IF
+#ACT
+  #CALL [\任务配置\主线任务.txt] @任务13
+  CLIENTCMD HideIconEffects 战灵系统 1
+
+#IF
+#ACT
+  MOV S$宠物按钮名 开始进阶
+  GOTO @宠物信息配置
+
+#IF
+#ACT
+  UIDLG Close ALL
+  UIDLG Open jiaoben005 400 150 0 0 1
+  UIDLG SetbuttonText jiaoben005 button_001:<$STR(S$宠物按钮名)>       
+  UIDLG SetRichText jiaoben005 WBK_001:<　　　　　　　当前加成/SCOLOR=58>\\<　　　　　　攻击：<$STR(N$当前攻击加成)>/SCOLOR=250>\\<　　　　　　防御：<$STR(N$当前防御加成)>/SCOLOR=250>\\<　　　　　　生命：<$STR(N$当前生命加成)>/SCOLOR=250>\\<　　　　　　<$STR(S$当前自动拾取功能)>/SCOLOR=250>\\
+  UIDLG SetRichText jiaoben005 WBK_002:<　　　　　　下一级加成/SCOLOR=58>\\<　　　　　　攻击：<$STR(N$下级攻击加成)>/SCOLOR=250>\\<　　　　　　防御：<$STR(N$下级防御加成)>/SCOLOR=250>\\<　　　　　　生命：<$STR(N$下级生命加成)>/SCOLOR=250>\\<　　　　　　<$STR(S$下级自动拾取功能)>/SCOLOR=253>\\<　　　<$STR(S$下级材料需求)>/SCOLOR=253>\\
+  UIDLG PlayEffect jiaoben005 effect_001:<$STR(S$当前宠物展示)>
+
+  UIDLG BindCheckBox jiaoben005 CheckBox_001:N$自动拾取开关状态
+  UIDLG CheckBox jiaoben005 CheckBox_001:<$STR(N$自动拾取开关状态)>
+
+  UIDLG SetCheckBoxGOTO jiaoben005 CheckBox_001:@自动拾取开关
+  UIDLG SetButtonGOTO jiaoben005 button_001:@宠物进阶
+#SAY
+UICMD
+<自动拾取开关/@自动拾取开关>\
+<宠物进阶/@宠物进阶>\
+
+
+[@宠物进阶]
+#IF
+#ACT
+  GOTO @进阶材料配置
+
+#IF
+  LARGE U1 8
+#ACT
+  MessAgeBox <　　　　　　　已满级!/SCOLOR=58>
+BREAK
+
+#IF
+  CheckItem <$STR(S$进阶材料)> 10
+#ELSEACT
+  MessAgeBox <　　　　　　　材料不足!/SCOLOR=58>
+BREAK
+
+#IF
+  random 4
+#ACT
+  take <$STR(S$进阶材料)> 10
+  INC U1 1
+  MessAgeBox <恭喜您的战灵进阶成功!/SCOLOR=250>
+  GOTO @MAIN
+#ELSEACT
+  take <$STR(S$进阶材料)> 10
+  MessAgeBox <战灵进阶失败!/SCOLOR=58>
+  GOTO @MAIN
+BREAK
+
+
+[@自动拾取开关]
+#IF
+  SMALL U1 3
+  EQUAL N$自动拾取开关状态 1
+#ACT
+  MOV N$自动拾取开关状态 0
+  MessAgeBox <宠物等级达到3级以上才能开启自动拾取功能!/SCOLOR=58>
+  GOTO @MAIN
+BREAK
+
+#IF
+  EQUAL N$自动拾取开关状态 0
+#ACT
+  CloseAutoPickItem
+  SendNewLineMsg 1 58 0 0 0 0 0 自动拾取关闭！
+  GOTO @MAIN
+BREAK
+
+#IF
+  EQUAL N$自动拾取开关状态 1
+#ACT
+  OpenAutoPickItem 1 0 10 1 0 0 100
+  SendNewLineMsg 1 251 0 0 0 0 0 自动拾取开启！
+  GOTO @MAIN
+BREAK
+
+[@宠物信息配置]
+#IF
+  EQUAL U1 0
+#ACT
+  MOV N$当前攻击加成 0
+  MOV N$当前防御加成 0
+  MOV N$当前生命加成 0
+  MOV S$宠物按钮名 激活战灵
+  MOV N$下级攻击加成 10
+  MOV N$下级防御加成 10
+  MOV N$下级生命加成 100
+  MOV S$下级材料需求 激活材料：战灵精魄Lv.1*10
+  MOV S$当前自动拾取功能  
+  MOV S$下级自动拾取功能  
+  MOV S$当前宠物展示  
+
+#IF
+  LARGE U1 0
+  SMALL U1 9
+#ACT
+  MOV N$战灵当前每级加成 U1
+  MOV N$战灵每级攻防 <$STR(N$战灵当前每级加成)>0
+  MOV N$战灵每级生命 <$STR(N$战灵当前每级加成)>00
+  MOV N$当前攻击加成 <$STR(N$战灵当前每级加成)>0
+  MOV N$当前防御加成 <$STR(N$战灵当前每级加成)>0
+  MOV N$当前生命加成 <$STR(N$战灵当前每级加成)>00
+  MOV S$宠物按钮名 战灵进阶
+  MOV N$战灵下级每级加成 U1
+  INC N$战灵下级每级加成 1
+  MOV N$初始宠物展示编号 30
+  MUL N$宠物展示阶段 U1 6
+  MOV N$当前宠物展示编号 N$初始宠物展示编号
+  INC N$当前宠物展示编号 N$宠物展示阶段
+  MOV N$下级攻击加成 <$STR(N$战灵下级每级加成)>0
+  MOV N$下级防御加成 <$STR(N$战灵下级每级加成)>0
+  MOV N$下级生命加成 <$STR(N$战灵下级每级加成)>00
+  MOV S$下级材料需求 激活材料：战灵精魄Lv.<$STR(N$战灵下级每级加成)>*10
+  MOV S$当前自动拾取功能  
+  MOV S$下级自动拾取功能  
+  MOV S$当前宠物展示 UIsucai1.wil:<$STR(N$当前宠物展示编号)>:6:100:0
+BREAK
+
+#IF
+  LARGE U1 8
+#ACT
+  MOV N$战灵当前每级加成 U1
+  MOV N$战灵每级攻防 <$STR(N$战灵当前每级加成)>0
+  MOV N$战灵每级生命 <$STR(N$战灵当前每级加成)>00
+  MOV N$当前攻击加成 <$STR(N$战灵当前每级加成)>0
+  MOV N$当前防御加成 <$STR(N$战灵当前每级加成)>0
+  MOV N$当前生命加成 <$STR(N$战灵当前每级加成)>00
+  MOV S$宠物按钮名 战灵进阶
+  MOV N$战灵下级每级加成 U1
+  INC N$战灵下级每级加成 1
+  MOV N$初始宠物展示编号 30
+  MUL N$宠物展示阶段 U1 6
+  MOV N$当前宠物展示编号 N$初始宠物展示编号
+  INC N$当前宠物展示编号 N$宠物展示阶段
+  MOV N$下级攻击加成 0
+  MOV N$下级防御加成 0
+  MOV N$下级生命加成 0
+  MOV S$下级材料需求 　　　　　　已满级
+  MOV S$当前自动拾取功能  
+  MOV S$下级自动拾取功能  
+  MOV S$当前宠物展示 UIsucai1.wil:<$STR(N$当前宠物展示编号)>:6:100:0
+BREAK
+
+
+[@进阶材料配置]
+#IF
+#ACT
+  MOV N$进阶等级标记 U1
+  INC N$进阶等级标记 1
+  MOV S$进阶材料 战灵精魄Lv.<$STR(N$进阶等级标记)>
+BREAK
+
+[@战灵属性配置]
+#IF
+  EQUAL U1 0
+#ACT
+BREAK
+
+#IF
+  CHECKFENGHAO 战灵<$STR(U1)>
+#ELSEACT
+  RECYCFENGHAO SELF 战灵1
+  RECYCFENGHAO SELF 战灵2
+  RECYCFENGHAO SELF 战灵3
+  RECYCFENGHAO SELF 战灵4
+  RECYCFENGHAO SELF 战灵5
+  RECYCFENGHAO SELF 战灵6
+  RECYCFENGHAO SELF 战灵7
+  RECYCFENGHAO SELF 战灵8
+  RECYCFENGHAO SELF 战灵9
+  GIVEFENGHAO SELF 战灵<$STR(U1)>
+BREAK
+
+
+
+
+
+
+
+
+
+
+}
