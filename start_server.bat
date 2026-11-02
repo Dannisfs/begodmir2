@@ -44,19 +44,25 @@ start "" /D "D:\GODserver\Mirserver" "D:\GODserver\Mirserver\GameCenter.exe"
 :: 5. Start LoginGate (Port 7000 -> LoginSrv 5500)
 if exist "D:\GODserver\Mirserver\LoginGate\LoginGate.exe" (
     echo [*] Launching LoginGate Port 7000...
-    start "" /D "D:\GODserver\Mirserver\LoginGate" "D:\GODserver\Mirserver\LoginGate\LoginGate.exe"
+    cd /d "D:\GODserver\Mirserver\LoginGate"
+    start "LoginGate_7000" LoginGate.exe
+    cd /d "D:\000GOD"
 )
 
 :: 6. Start SelGate (Port 7100 -> DBServer 5100)
 if exist "D:\GODserver\Mirserver\SelGate\SelGate.exe" (
     echo [*] Launching SelGate Port 7100...
-    start "" /D "D:\GODserver\Mirserver\SelGate" "D:\GODserver\Mirserver\SelGate\SelGate.exe"
+    cd /d "D:\GODserver\Mirserver\SelGate"
+    start "SelGate_7100" SelGate.exe
+    cd /d "D:\000GOD"
 )
 
 :: 7. Start Gateway 4.3 if exists
 if exist "D:\GODserver\Mirserver\Gateway\Gateway4.3.exe" (
     echo [*] Launching Gateway 4.3 Port 8090...
-    start "" /D "D:\GODserver\Mirserver\Gateway" "D:\GODserver\Mirserver\Gateway\Gateway4.3.exe"
+    cd /d "D:\GODserver\Mirserver\Gateway"
+    start "Gateway_8090" Gateway4.3.exe
+    cd /d "D:\000GOD"
 )
 
 echo.
